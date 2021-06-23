@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "esModuleInterop": true,
+    "inlineSources": true,
+    "lib": ["ES2020"],
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "outDir": "dist",
+    "sourceMap": true,
+    "strict": true,
+    "resolveJsonModule": true,
+    "target": "ES2017"
+  },
+  "exclude": ["./src/**/*.test.ts"],
+  "include": [
+    "./src/**/*.ts",
+    "./openrpc.json"
+  ]
+}
