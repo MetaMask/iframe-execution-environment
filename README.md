@@ -1,22 +1,4 @@
-# MetaMask Module Template
-
-This TypeScript module is maintained in the style of the MetaMask team.
-
-## Installation
-
-`yarn add @metamask/this-module`
-
-or
-
-`npm install @metamask/this-module`
-
-## Usage
-
-_Add examples here_
-
-## API
-
-_Add examples here_
+# iFrame Execution Environment
 
 ## Contributing
 
