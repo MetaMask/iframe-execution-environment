@@ -230,6 +230,7 @@ class Controller {
    */
   private createPluginProvider(pluginName: string): PluginProvider {
     const pluginProvider = (new MetaMaskInpageProvider(this.rpcStream as any, {
+      jsonRpcStreamName: pluginName,
       shouldSendMetadata: false,
     }) as unknown) as Partial<PluginProvider>;
 
