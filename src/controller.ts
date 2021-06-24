@@ -78,20 +78,18 @@ class Controller {
 
   private async connectToParent() {
     console.log('Worker: Connecting to parent.');
-    (global as any).addEventListener('message', (event: any) => {
-      this.onCommandRequest(event.data);
+
+    const parentStream = new WindowPostMessageStream({
+      name: 'child',
+      target: 'parent',
+      targetWindow: (global as any).parent,
     });
+    const mux = setupMultiplex(parentStream as any, 'Parent');
 
-    // const parentStream = new WindowPostMessageStream({
-    //   name: 'child',
-    //   target: 'parent',
-    // });
-    // const mux = setupMultiplex(parentStream as any, 'Parent');
+    this.commandStream = mux.createStream(STREAM_NAMES.COMMAND) as any;
+    this.commandStream.on('data', this.onCommandRequest.bind(this));
 
-    // this.commandStream = mux.createStream(STREAM_NAMES.COMMAND) as any;
-    // this.commandStream.on('data', this.onCommandRequest.bind(this));
-
-    // this.rpcStream = mux.createStream(STREAM_NAMES.JSON_RPC) as any;
+    this.rpcStream = mux.createStream(STREAM_NAMES.JSON_RPC) as any;
 
     this.methods = methods(this);
   }
@@ -174,14 +172,11 @@ class Controller {
   }
 
   private respond(id: JsonRpcId, responseObj: Record<string, unknown>) {
-    (global as any).parent.postMessage(
-      {
-        ...responseObj,
-        id,
-        jsonrpc: '2.0',
-      },
-      '*',
-    );
+    this.commandStream.write({
+      ...responseObj,
+      id,
+      jsonrpc: '2.0',
+    });
   }
 
   /**
@@ -234,10 +229,9 @@ class Controller {
    * plugin provider object (i.e. globalThis.wallet), and returns it.
    */
   private createPluginProvider(pluginName: string): PluginProvider {
-    // const pluginProvider = (new MetaMaskInpageProvider(this.rpcStream as any, {
-    //   shouldSendMetadata: false,
-    // }) as unknown) as Partial<PluginProvider>;
-    const pluginProvider: any = {};
+    const pluginProvider = (new MetaMaskInpageProvider(this.rpcStream as any, {
+      shouldSendMetadata: false,
+    }) as unknown) as Partial<PluginProvider>;
 
     pluginProvider.registerRpcMessageHandler = (func: PluginRpcHandler) => {
       console.log('Worker: Registering RPC message handler', func);
