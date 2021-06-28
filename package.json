@@ -73,6 +73,7 @@
     "@metamask/post-message-stream": "^4.0.0",
     "@open-rpc/schema-utils-js": "^1.15.0",
     "buffer-browserify": "^0.2.5",
+    "console-browserify": "^1.2.0",
     "json-rpc-engine": "^6.1.0",
     "pump": "^3.0.0",
     "ses": "^0.13.4",

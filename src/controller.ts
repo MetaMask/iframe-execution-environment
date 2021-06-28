@@ -13,7 +13,6 @@ import 'ses'; //eslint-disable-line
 import EEOpenRPCDocument from '../openrpc.json';
 import { STREAM_NAMES } from './enums';
 
-
 // eslint-disable-next-line import/no-unassigned-import
 import { IframeExecutionEnvironmentMethodMapping, methods } from './methods';
 import { JSONRPCRequest } from './__GENERATED_TYPES__';
@@ -38,12 +37,6 @@ global.lockdown({
   errorTaming: 'unsafe',
   dateTaming: 'unsafe',
 });
-
-/**
- * TODO:
- * To support multiple plugins per worker, we need to duplex the rpcStream
- * on this end, and pass MetaMaskInpageProvider the appropriate stream name.
- */
 
 // init
 class Controller {
@@ -127,7 +120,7 @@ class Controller {
         (m) => m.name === method,
       );
 
-      // support by-name and by-position
+      // support params by-name and by-position
       const paramsAsArray =
         params instanceof Array ? params : sortParamKeys(methodObject, params);
 

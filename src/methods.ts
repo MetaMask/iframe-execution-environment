@@ -20,7 +20,6 @@ export const methods = (
     },
     pluginRpc: async (target, origin, request) => {
       const handler = context.pluginRpcHandlers.get(target);
-      console.log("found handler", handler);
 
       if (!handler) {
         throw new Error(`No RPC handler registered for plugin "${target}".`);
