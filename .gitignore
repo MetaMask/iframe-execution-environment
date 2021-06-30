@@ -77,8 +77,6 @@ node_modules/
 
 # build
 
-public/**/*
-!public/index.html
-
-
+public/
 src/__GENERATED_TYPES__/
+

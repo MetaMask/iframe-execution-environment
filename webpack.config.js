@@ -1,7 +1,19 @@
 const path = require('path');
+const fs = require('fs');
 const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const DIST = path.resolve(__dirname, 'public');
+
+// eslint-disable-next-line node/no-sync
+const appDirectory = fs.realpathSync(process.cwd(), 'utf8');
+const resolveApp = (relativePath) => path.resolve(appDirectory, relativePath);
+// eslint-disable-next-line import/no-dynamic-require
+const prefix = require(resolveApp('package.json')).homepage;
+
+// eslint-disable-next-line node/no-process-env
+const isProd = process.env.NODE_ENV === 'production';
+const htmlwebpackOptions = isProd ? { publicPath: prefix } : undefined;
 
 module.exports = {
   devtool: 'inline-source-map',
@@ -18,6 +30,7 @@ module.exports = {
     writeToDisk: true,
   },
   plugins: [
+    new HtmlWebpackPlugin(htmlwebpackOptions),
     new NodePolyfillPlugin({
       excludeAliases: ['stream', 'buffer'],
     }),
