@@ -2,6 +2,7 @@
   "name": "@metamask/iframe-execution-environment",
   "version": "0.0.0",
   "description": "snaps iframe execution environment",
+  "homepage": "https://metamask.github.io/iframe-execution-environment/",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"
