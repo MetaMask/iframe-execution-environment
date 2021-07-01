@@ -34,7 +34,7 @@
     "@metamask/eslint-config": "^7.0.1",
     "@metamask/eslint-config-jest": "^6.0.0",
     "@metamask/eslint-config-nodejs": "^6.0.0",
-    "@metamask/eslint-config-typescript": "^6.0.0",
+    "@metamask/eslint-config-typescript": "^7.0.1",
     "@mm-snap/types": "^0.0.5",
     "@open-rpc/typings": "^1.11.4",
     "@types/jest": "^26.0.13",
