@@ -13,7 +13,6 @@ import 'ses'; //eslint-disable-line
 import EEOpenRPCDocument from '../openrpc.json';
 import { STREAM_NAMES } from './enums';
 
-// eslint-disable-next-line import/no-unassigned-import
 import { IframeExecutionEnvironmentMethodMapping, methods } from './methods';
 import { JSONRPCRequest } from './__GENERATED_TYPES__';
 import { sortParamKeys } from './helpers/sortParams';
