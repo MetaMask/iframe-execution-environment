@@ -11,7 +11,7 @@ const resolveApp = (relativePath) => path.resolve(appDirectory, relativePath);
 // eslint-disable-next-line import/no-dynamic-require
 const prefix = require(resolveApp('package.json')).homepage;
 
-module.exports = (env, argv) => {
+module.exports = (_, argv) => {
   // eslint-disable-next-line node/no-process-env
   const isProd = argv.mode === 'production';
   const htmlwebpackOptions = isProd ? { publicPath: prefix } : undefined;
@@ -61,4 +61,4 @@ module.exports = (env, argv) => {
     },
   };
   return config;
-}
+};
