@@ -12,7 +12,6 @@ const resolveApp = (relativePath) => path.resolve(appDirectory, relativePath);
 const prefix = require(resolveApp('package.json')).homepage;
 
 module.exports = (_, argv) => {
-  // eslint-disable-next-line node/no-process-env
   const isProd = argv.mode === 'production';
   const htmlwebpackOptions = isProd ? { publicPath: prefix } : undefined;
 
