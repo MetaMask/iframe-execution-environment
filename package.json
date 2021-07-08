@@ -32,7 +32,8 @@
     "lint": "yarn lint:eslint && yarn lint:misc --check",
     "lint:fix": "yarn lint:eslint --fix && yarn lint:misc --write",
     "build:clean": "rimraf dist && yarn build",
-    "build": "yarn typings && webpack --mode production"
+    "build": "yarn typings && webpack --mode production",
+    "auto-changelog-init": "auto-changelog init"
   },
   "devDependencies": {
     "@lavamoat/allow-scripts": "^1.0.5",
