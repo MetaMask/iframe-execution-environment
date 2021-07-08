@@ -72,6 +72,7 @@
     }
   },
   "dependencies": {
+    "@metamask/auto-changelog": "^2.4.0",
     "@metamask/inpage-provider": "^8.1.0",
     "@metamask/object-multiplex": "^1.2.0",
     "@metamask/post-message-stream": "^4.0.0",
