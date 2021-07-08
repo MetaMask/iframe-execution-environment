@@ -17,14 +17,6 @@ import { IframeExecutionEnvironmentMethodMapping, methods } from './methods';
 import { JSONRPCRequest } from './__GENERATED_TYPES__';
 import { sortParamKeys } from './helpers/sortParams';
 
-declare global {
-  const self: any;
-  const XMLHttpRequest: any;
-  const WebSocket: any;
-  const SubtleCrypto: any;
-  const crypto: any;
-}
-
 type PluginRpcHandler = (
   origin: string,
   request: JSONRPCRequest,
