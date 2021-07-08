@@ -20,7 +20,7 @@
     "setup": "yarn install && yarn allow-scripts",
     "typings": "open-rpc-typings -d openrpc.json --output-ts=src/__GENERATED_TYPES__/",
     "postinstall": "yarn typings",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
     "prepublishOnly": "yarn build:clean && yarn lint && yarn test",
     "lint:eslint": "eslint . --cache --ext js,ts",
