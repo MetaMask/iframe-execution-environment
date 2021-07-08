@@ -18,13 +18,13 @@ export const methods = (
       context.startPlugin(pluginName as string, sourceCode as string);
       return 'OK';
     },
-    pluginRpc: async (target, origin, request) => {
+    pluginRpc: async (target, requestOrigin, request) => {
       const handler = context.pluginRpcHandlers.get(target);
 
       if (!handler) {
         throw new Error(`No RPC handler registered for plugin "${target}".`);
       }
-      return handler(origin, request) as any;
+      return handler(requestOrigin, request) as any;
     },
   };
 };

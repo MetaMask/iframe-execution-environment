@@ -22,7 +22,7 @@ type PluginRpcHandler = (
   request: JSONRPCRequest,
 ) => Promise<unknown>;
 
-global.lockdown({
+lockdown({
   // TODO: Which would we use in prod?
   mathTaming: 'unsafe',
   errorTaming: 'unsafe',
