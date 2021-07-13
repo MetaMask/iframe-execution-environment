@@ -26,11 +26,11 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: ${{ steps.nvm.outputs.NODE_VERSION }}
-      - run: yarn --frozen-lockfile
-      - run: yarn allow-scripts
       - uses: MetaMask/action-publish-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: yarn --frozen-lockfile
+      - run: yarn allow-scripts
       - uses: MetaMask/action-publish-gh-pages@v1
         with:
           directory: public
