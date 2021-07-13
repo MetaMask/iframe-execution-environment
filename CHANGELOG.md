@@ -7,8 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.0.2]
-### Uncategorized
-- Added install step in publish-release.yml ([#8](https://github.com/MetaMask/iframe-execution-environment/pull/8))
+### Added
+- Install step in publish-release.yml ([#8](https://github.com/MetaMask/iframe-execution-environment/pull/8))
 
 ## [0.0.1]
 ### Added
