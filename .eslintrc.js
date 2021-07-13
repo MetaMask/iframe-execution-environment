@@ -20,6 +20,7 @@ module.exports = {
     {
       files: ['*.js'],
       parserOptions: {
+        ecmaVersion: 2018,
         sourceType: 'script',
       },
       extends: ['@metamask/eslint-config-nodejs'],
@@ -31,5 +32,11 @@ module.exports = {
     },
   ],
 
-  ignorePatterns: ['!.eslintrc.js', '!.prettierrc.js', 'dist/'],
+  ignorePatterns: [
+    '!.eslintrc.js',
+    '!.prettierrc.js',
+    'dist/',
+    'public/',
+    'src/__GENERATED_TYPES__',
+  ],
 };
