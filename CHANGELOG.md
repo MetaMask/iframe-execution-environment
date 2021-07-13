@@ -10,7 +10,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Added CI Workflows and fixed linting issues to pass CI ([#3](https://github.com/MetaMask/iframe-execution-environment/pull/3))
 - get WindowPostMessageStream working
-- The Beginning Of Time
 
 [Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.0.1...HEAD
 [0.0.1]: https://github.com/MetaMask/iframe-execution-environment/releases/tag/v0.0.1
