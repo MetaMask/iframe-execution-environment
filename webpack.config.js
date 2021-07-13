@@ -18,7 +18,7 @@ module.exports = (_, argv) => {
   }
   const config = {
     ...extraOptions,
-    mode: isProd ? 'production' : 'development',
+    mode: argv.mode,
     entry: './src/index.ts',
     output: {
       filename: 'bundle.js',
