@@ -1,6 +1,6 @@
 {
   "name": "@metamask/iframe-execution-environment",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "snaps iframe execution environment",
   "homepage": "https://metamask.github.io/iframe-execution-environment/",
   "publishConfig": {
