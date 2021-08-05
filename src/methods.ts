@@ -15,6 +15,18 @@ export const methods = (
       return 'OK';
     },
     executePlugin: async (pluginName, sourceCode) => {
+      if (pluginName === undefined) {
+        throw new Error('pluginName is not defined');
+      }
+      if (typeof pluginName !== 'string') {
+        throw new Error('pluginName is not a string');
+      }
+      if (sourceCode === undefined) {
+        throw new Error('sourceCode is not defined');
+      }
+      if (typeof sourceCode !== 'string') {
+        throw new Error('sourceCode is not a string');
+      }
       context.startPlugin(pluginName as string, sourceCode as string);
       return 'OK';
     },
