@@ -7,9 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.0.3]
-### Uncategorized
+### Removed
 - Removed ajv based json validator ([#12](https://github.com/MetaMask/iframe-execution-environment/pull/12))
-- Bump tar from 6.1.0 to 6.1.5 ([#11](https://github.com/MetaMask/iframe-execution-environment/pull/11))
+### Changed
 - Bump @metamask/auto-changelog from 2.4.0 to 2.5.0 ([#10](https://github.com/MetaMask/iframe-execution-environment/pull/10))
 
 ## [0.0.2]
