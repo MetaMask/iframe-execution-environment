@@ -5,10 +5,7 @@ import pump from 'pump';
 import { WindowPostMessageStream } from '@metamask/post-message-stream';
 import type { JsonRpcId, JsonRpcRequest } from 'json-rpc-engine';
 import { PluginProvider } from '@mm-snap/types';
-import {
-  MethodCallValidator,
-  MethodNotFoundError,
-} from '@open-rpc/schema-utils-js';
+import 'isomorphic-fetch'; //eslint-disable-line
 import 'ses'; //eslint-disable-line
 import EEOpenRPCDocument from '../openrpc.json';
 import { STREAM_NAMES } from './enums';
@@ -35,22 +32,14 @@ class Controller {
 
   private initialized = false;
 
-  private commandStream: Duplex;
+  private commandStream?: Duplex;
 
-  private rpcStream: Duplex;
+  private rpcStream?: Duplex;
 
-  private methods: IframeExecutionEnvironmentMethodMapping;
-
-  private methodCallValidator: MethodCallValidator;
+  private methods?: IframeExecutionEnvironmentMethodMapping;
 
   constructor() {
     this.pluginRpcHandlers = new Map();
-    this.commandStream = null as any;
-    this.rpcStream = null as any;
-    this.methods = null as any;
-    this.methodCallValidator = new MethodCallValidator(
-      EEOpenRPCDocument as any,
-    );
   }
 
   initialize() {
@@ -66,14 +55,18 @@ class Controller {
     const parentStream = new WindowPostMessageStream({
       name: 'child',
       target: 'parent',
-      targetWindow: (global as any).parent,
+      targetWindow: window.parent,
     });
     const mux = setupMultiplex(parentStream as any, 'Parent');
 
-    this.commandStream = mux.createStream(STREAM_NAMES.COMMAND) as any;
-    this.commandStream.on('data', this.onCommandRequest.bind(this));
+    this.commandStream = (mux.createStream(
+      STREAM_NAMES.COMMAND,
+    ) as unknown) as Duplex;
+    this.commandStream?.on('data', this.onCommandRequest.bind(this));
 
-    this.rpcStream = mux.createStream(STREAM_NAMES.JSON_RPC) as any;
+    this.rpcStream = (mux.createStream(
+      STREAM_NAMES.JSON_RPC,
+    ) as unknown) as Duplex;
 
     this.methods = methods(this);
   }
@@ -85,7 +78,6 @@ class Controller {
     }
 
     const { id, method, params } = message;
-    console.log('MESSAGE', message);
 
     if (
       id === null ||
@@ -105,8 +97,6 @@ class Controller {
       return;
     }
     if (this.methods) {
-      const p: any = params;
-
       const methodObject = EEOpenRPCDocument.methods.find(
         (m) => m.name === method,
       );
@@ -125,27 +115,17 @@ class Controller {
         });
         return;
       }
-      const result = await (this.methods as any)[method](...paramsAsArray);
-      const errors = this.methodCallValidator.validate(method, p);
-      if (errors instanceof MethodNotFoundError) {
+      let result;
+      try {
+        result = await (this.methods as any)[method](...paramsAsArray);
+      } catch (e) {
         this.respond(id, {
           error: {
-            code: -32601,
-            message: 'Method Not Found',
-            data: errors.methodName,
+            code: -32603,
+            message: 'Internal JSON-RPC error.',
+            data: e.message,
           },
         });
-        return;
-      }
-      if (errors && errors.length > 0) {
-        this.respond(id, {
-          error: {
-            code: -32602,
-            message: 'Invalid Params',
-            data: errors,
-          },
-        });
-        return;
       }
       this.respond(id, { result });
     } else {
@@ -155,8 +135,8 @@ class Controller {
     }
   }
 
-  private respond(id: JsonRpcId, responseObj: Record<string, unknown>) {
-    this.commandStream.write({
+  public respond(id: JsonRpcId, responseObj: Record<string, unknown>) {
+    this.commandStream?.write({
       ...responseObj,
       id,
       jsonrpc: '2.0',
@@ -182,12 +162,12 @@ class Controller {
       BigInt,
       Buffer,
       console, // Adding raw console for now
-      crypto,
+      crypto: window.crypto,
       Date,
-      fetch: self.fetch.bind(self),
+      fetch: window.fetch.bind(window),
       Math, // Math.random is considered unsafe, but we need it
       setTimeout,
-      SubtleCrypto,
+      SubtleCrypto: window.SubtleCrypto,
       wallet,
       WebSocket,
       XMLHttpRequest,

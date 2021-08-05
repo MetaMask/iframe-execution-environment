@@ -1,6 +1,9 @@
 // source sortParamKeys from: https://github.com/etclabscore/sig.tools/blob/master/src/postMessageServer/postMessageServer.ts#L75-L77
 
 export const sortParamKeys = (method: any, params: any) => {
+  if (!params) {
+    return [];
+  }
   const docParams = method.params as any;
   const methodParamsOrder: { [k: string]: number } = docParams
     .map((p: any) => p.name)
