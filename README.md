@@ -1,5 +1,10 @@
 # iFrame Execution Environment
 
+
+## Try it out
+
+You can try out the `iframe-execution-environment` by following these instructions: https://github.com/MetaMask/iframe-ee-openrpc-inspector-transport#instructions.
+
 ## Contributing
 
 ### Setup
