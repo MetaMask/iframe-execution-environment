@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.0.4]
 ### Removed
-- stream name override for metamask provider ([#17](https://github.com/MetaMask/iframe-execution-environment/pull/17)
+- stream name override for metamask provider ([#17](https://github.com/MetaMask/iframe-execution-environment/pull/17))
 
 ### Changed
 - Bump url-parse from 1.5.1 to 1.5.3 ([#16](https://github.com/MetaMask/iframe-execution-environment/pull/16))
