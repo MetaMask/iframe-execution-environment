@@ -122,8 +122,7 @@ class Controller {
         this.respond(id, {
           error: {
             code: -32603,
-            message: 'Internal JSON-RPC error.',
-            data: e.message,
+            message: `Internal JSON-RPC error: ${e.message}`,
           },
         });
       }
@@ -181,10 +180,8 @@ class Controller {
       compartment.evaluate(sourceCode);
     } catch (err) {
       this.removePlugin(pluginName);
-      console.error(
-        `Error while running plugin '${pluginName}' in worker:${self.name}.`,
-        err,
-      );
+      console.error(`Error while running plugin '${pluginName}'.`, err);
+      throw new Error(`Error while running plugin '${pluginName}'.`);
     }
   }
 
