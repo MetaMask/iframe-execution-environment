@@ -180,7 +180,6 @@ class Controller {
       compartment.evaluate(sourceCode);
     } catch (err) {
       this.removePlugin(pluginName);
-      console.error(`Error while running plugin '${pluginName}'.`, err);
       throw new Error(`Error while running plugin '${pluginName}'.`);
     }
   }
