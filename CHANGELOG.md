@@ -7,8 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.0.5]
-### Uncategorized
-- Added initial JSON-RPC Error support ([#19](https://github.com/MetaMask/iframe-execution-environment/pull/19))
+### Added
+- JSON-RPC Error support for `executePlugin` ([#19](https://github.com/MetaMask/iframe-execution-environment/pull/19))
 
 ## [0.0.4]
 ### Added
