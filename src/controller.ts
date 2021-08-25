@@ -115,9 +115,9 @@ class Controller {
         });
         return;
       }
-      let result;
       try {
-        result = await (this.methods as any)[method](...paramsAsArray);
+        const result = await (this.methods as any)[method](...paramsAsArray);
+        this.respond(id, { result });
       } catch (e) {
         this.respond(id, {
           error: {
@@ -126,7 +126,6 @@ class Controller {
           },
         });
       }
-      this.respond(id, { result });
     } else {
       this.respond(id, {
         error: new Error(`Unrecognized command: ${method}.`),
