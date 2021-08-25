@@ -7,8 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.0.6]
-### Uncategorized
-- Changed controller rpc error handler to not respond twice ([#21](https://github.com/MetaMask/iframe-execution-environment/pull/21))
+### Changed
+- Controller rpc error handler to not respond twice ([#21](https://github.com/MetaMask/iframe-execution-environment/pull/21))
 
 ## [0.0.5]
 ### Added
