@@ -7,8 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.0.6]
-### Changed
-- Controller rpc error handler to not respond twice ([#21](https://github.com/MetaMask/iframe-execution-environment/pull/21))
+### Fixed
+- Stop responding twice in case of RPC method errors ([#21](https://github.com/MetaMask/iframe-execution-environment/pull/21))
+  - We were sending a second, faulty response from the execution environment whenever an RPC method errored. This is now fixed.
 
 ## [0.0.5]
 ### Added
