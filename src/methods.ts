@@ -36,7 +36,7 @@ export const methods = (
       if (!handler) {
         throw new Error(`No RPC handler registered for plugin "${target}".`);
       }
-      return handler(requestOrigin, request) as any;
+      return handler(requestOrigin, request) as Promise<any>;
     },
   };
 };
