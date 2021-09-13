@@ -206,7 +206,6 @@ class Controller {
     };
 
     this.pluginErrorHandler = (error: ErrorEvent) => {
-      console.log('plugin error, bubbling up', error);
       this.errorHandler(pluginName, error.message);
     };
     this.pluginPromiseErrorHandler = (error: PromiseRejectionEvent) => {
