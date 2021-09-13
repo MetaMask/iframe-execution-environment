@@ -209,7 +209,6 @@ class Controller {
       this.errorHandler(pluginName, error.message);
     };
     this.pluginPromiseErrorHandler = (error: PromiseRejectionEvent) => {
-      console.log('plugin promise error, bubbling up', error);
       this.errorHandler(pluginName, error.reason.toString());
     };
 
@@ -225,10 +224,10 @@ class Controller {
         this.pluginPromiseErrorHandler,
       );
       window.addEventListener('error', this.pluginErrorHandler);
-    } catch (err: any) {
+    } catch (err) {
       this.removePlugin(pluginName);
       throw new Error(
-        `Error while running plugin '${pluginName}': ${err.message}`,
+        `Error while running plugin '${pluginName}': ${(err as Error).message}`,
       );
     }
   }
