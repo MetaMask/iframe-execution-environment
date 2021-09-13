@@ -38,15 +38,33 @@ class Controller {
 
   private methods?: IframeExecutionEnvironmentMethodMapping;
 
+  private pluginErrorHandler?: (event: any) => void;
+
+  private pluginPromiseErrorHandler?: (event: any) => void;
+
   constructor() {
     this.pluginRpcHandlers = new Map();
   }
 
-  initialize() {
+  public async initialize() {
     if (this.initialized) {
-      return;
+      throw new Error('already initialized');
     }
-    this.connectToParent();
+    return this.connectToParent();
+  }
+
+  private errorHandler(pluginName: string, errorMessage: string, data = {}) {
+    this.notify({
+      id: null,
+      error: {
+        message: errorMessage,
+        code: -3206,
+        data: {
+          pluginName,
+          ...data,
+        },
+      },
+    });
   }
 
   private async connectToParent() {
@@ -122,7 +140,7 @@ class Controller {
         this.respond(id, {
           error: {
             code: -32603,
-            message: `Internal JSON-RPC error: ${e.message}`,
+            message: `Internal JSON-RPC error: ${(e as Error).message}`,
           },
         });
       }
@@ -131,6 +149,13 @@ class Controller {
         error: new Error(`Unrecognized command: ${method}.`),
       });
     }
+  }
+
+  public notify(requestObject: Record<string, unknown>) {
+    this.commandStream?.write({
+      ...requestObject,
+      jsonrpc: '2.0',
+    });
   }
 
   public respond(id: JsonRpcId, responseObj: Record<string, unknown>) {
@@ -153,6 +178,15 @@ class Controller {
    */
   public startPlugin(pluginName: string, sourceCode: string) {
     console.log(`starting plugin '${pluginName}' in worker`);
+    if (this.pluginPromiseErrorHandler) {
+      window.removeEventListener(
+        'unhandledrejection',
+        this.pluginPromiseErrorHandler,
+      );
+    }
+    if (this.pluginErrorHandler) {
+      window.removeEventListener('error', this.pluginErrorHandler);
+    }
 
     const wallet = this.createPluginProvider(pluginName);
 
@@ -171,15 +205,32 @@ class Controller {
       XMLHttpRequest,
     };
 
+    this.pluginErrorHandler = (error: ErrorEvent) => {
+      console.log('plugin error, bubbling up', error);
+      this.errorHandler(pluginName, error.message);
+    };
+    this.pluginPromiseErrorHandler = (error: PromiseRejectionEvent) => {
+      console.log('plugin promise error, bubbling up', error);
+      this.errorHandler(pluginName, error.reason.toString());
+    };
+
     try {
       const compartment = new Compartment({
         ...endowments,
         window: { ...endowments },
       });
       compartment.evaluate(sourceCode);
-    } catch (err) {
+
+      window.addEventListener(
+        'unhandledrejection',
+        this.pluginPromiseErrorHandler,
+      );
+      window.addEventListener('error', this.pluginErrorHandler);
+    } catch (err: any) {
       this.removePlugin(pluginName);
-      throw new Error(`Error while running plugin '${pluginName}'.`);
+      throw new Error(
+        `Error while running plugin '${pluginName}': ${err.message}`,
+      );
     }
   }
 
