@@ -38,9 +38,9 @@ class Controller {
 
   private methods?: IframeExecutionEnvironmentMethodMapping;
 
-  private pluginErrorHandler?: (event: any) => void;
+  private pluginErrorHandler?: (event: ErrorEvent) => void;
 
-  private pluginPromiseErrorHandler?: (event: any) => void;
+  private pluginPromiseErrorHandler?: (event: PromiseRejectionEvent) => void;
 
   constructor() {
     this.pluginRpcHandlers = new Map();
