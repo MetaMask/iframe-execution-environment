@@ -7,6 +7,7 @@ import type { JsonRpcId, JsonRpcRequest } from 'json-rpc-engine';
 import { PluginProvider } from '@mm-snap/types';
 import 'isomorphic-fetch'; //eslint-disable-line
 import 'ses'; //eslint-disable-line
+import { ethErrors, serializeError } from 'eth-rpc-errors';
 import EEOpenRPCDocument from '../openrpc.json';
 import { STREAM_NAMES } from './enums';
 
@@ -25,6 +26,11 @@ lockdown({
   errorTaming: 'unsafe',
   dateTaming: 'unsafe',
 });
+
+const fallbackError = {
+  code: -32603,
+  message: 'Execution Environment Error',
+};
 
 // init
 class Controller {
@@ -53,15 +59,18 @@ class Controller {
     return this.connectToParent();
   }
 
-  private errorHandler(pluginName: string, errorMessage: string, data = {}) {
+  private errorHandler(error: Error, data = {}) {
+    const serializedError = serializeError(error, {
+      fallbackError,
+      shouldIncludeStack: true,
+    });
     this.notify({
       id: null,
       error: {
-        message: errorMessage,
-        code: -3206,
+        ...serializedError,
         data: {
-          pluginName,
           ...data,
+          stack: serializedError.stack,
         },
       },
     });
@@ -125,11 +134,13 @@ class Controller {
 
       if (!(this.methods as any)[method]) {
         this.respond(id, {
-          error: {
-            code: -32601,
-            message: 'Method Not Found',
-            data: method,
-          },
+          error: ethErrors.rpc
+            .methodNotFound({
+              data: {
+                method,
+              },
+            })
+            .serialize(),
         });
         return;
       }
@@ -138,15 +149,14 @@ class Controller {
         this.respond(id, { result });
       } catch (e) {
         this.respond(id, {
-          error: {
-            code: -32603,
-            message: `Internal JSON-RPC error: ${(e as Error).message}`,
-          },
+          error: serializeError(e, {
+            fallbackError,
+          }),
         });
       }
     } else {
       this.respond(id, {
-        error: new Error(`Unrecognized command: ${method}.`),
+        error: serializeError(new Error(`Unrecognized method: '${method}'.`)),
       });
     }
   }
@@ -206,10 +216,10 @@ class Controller {
     };
 
     this.pluginErrorHandler = (error: ErrorEvent) => {
-      this.errorHandler(pluginName, error.message);
+      this.errorHandler(error.error, { pluginName });
     };
     this.pluginPromiseErrorHandler = (error: PromiseRejectionEvent) => {
-      this.errorHandler(pluginName, error.reason.toString());
+      this.errorHandler(error.reason, { pluginName });
     };
 
     try {
