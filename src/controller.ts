@@ -7,6 +7,7 @@ import type { JsonRpcId, JsonRpcRequest } from 'json-rpc-engine';
 import { PluginProvider } from '@mm-snap/types';
 import 'isomorphic-fetch'; //eslint-disable-line
 import 'ses'; //eslint-disable-line
+import { ethErrors, serializeError } from 'eth-rpc-errors';
 import EEOpenRPCDocument from '../openrpc.json';
 import { STREAM_NAMES } from './enums';
 
@@ -26,6 +27,11 @@ lockdown({
   dateTaming: 'unsafe',
 });
 
+const fallbackError = {
+  code: -32603,
+  message: 'Execution Environment Error',
+};
+
 // init
 class Controller {
   public pluginRpcHandlers: Map<string, PluginRpcHandler>;
@@ -38,15 +44,36 @@ class Controller {
 
   private methods?: IframeExecutionEnvironmentMethodMapping;
 
+  private pluginErrorHandler?: (event: ErrorEvent) => void;
+
+  private pluginPromiseErrorHandler?: (event: PromiseRejectionEvent) => void;
+
   constructor() {
     this.pluginRpcHandlers = new Map();
   }
 
-  initialize() {
+  public async initialize() {
     if (this.initialized) {
-      return;
+      throw new Error('already initialized');
     }
-    this.connectToParent();
+    return this.connectToParent();
+  }
+
+  private errorHandler(error: Error, data = {}) {
+    const serializedError = serializeError(error, {
+      fallbackError,
+      shouldIncludeStack: true,
+    });
+    this.notify({
+      id: null,
+      error: {
+        ...serializedError,
+        data: {
+          ...data,
+          stack: serializedError.stack,
+        },
+      },
+    });
   }
 
   private async connectToParent() {
@@ -107,11 +134,13 @@ class Controller {
 
       if (!(this.methods as any)[method]) {
         this.respond(id, {
-          error: {
-            code: -32601,
-            message: 'Method Not Found',
-            data: method,
-          },
+          error: ethErrors.rpc
+            .methodNotFound({
+              data: {
+                method,
+              },
+            })
+            .serialize(),
         });
         return;
       }
@@ -120,17 +149,23 @@ class Controller {
         this.respond(id, { result });
       } catch (e) {
         this.respond(id, {
-          error: {
-            code: -32603,
-            message: `Internal JSON-RPC error: ${e.message}`,
-          },
+          error: serializeError(e, {
+            fallbackError,
+          }),
         });
       }
     } else {
       this.respond(id, {
-        error: new Error(`Unrecognized command: ${method}.`),
+        error: serializeError(new Error(`Unrecognized method: '${method}'.`)),
       });
     }
+  }
+
+  public notify(requestObject: Record<string, unknown>) {
+    this.commandStream?.write({
+      ...requestObject,
+      jsonrpc: '2.0',
+    });
   }
 
   public respond(id: JsonRpcId, responseObj: Record<string, unknown>) {
@@ -153,6 +188,15 @@ class Controller {
    */
   public startPlugin(pluginName: string, sourceCode: string) {
     console.log(`starting plugin '${pluginName}' in worker`);
+    if (this.pluginPromiseErrorHandler) {
+      window.removeEventListener(
+        'unhandledrejection',
+        this.pluginPromiseErrorHandler,
+      );
+    }
+    if (this.pluginErrorHandler) {
+      window.removeEventListener('error', this.pluginErrorHandler);
+    }
 
     const wallet = this.createPluginProvider(pluginName);
 
@@ -171,15 +215,30 @@ class Controller {
       XMLHttpRequest,
     };
 
+    this.pluginErrorHandler = (error: ErrorEvent) => {
+      this.errorHandler(error.error, { pluginName });
+    };
+    this.pluginPromiseErrorHandler = (error: PromiseRejectionEvent) => {
+      this.errorHandler(error.reason, { pluginName });
+    };
+
     try {
       const compartment = new Compartment({
         ...endowments,
         window: { ...endowments },
       });
       compartment.evaluate(sourceCode);
+
+      window.addEventListener(
+        'unhandledrejection',
+        this.pluginPromiseErrorHandler,
+      );
+      window.addEventListener('error', this.pluginErrorHandler);
     } catch (err) {
       this.removePlugin(pluginName);
-      throw new Error(`Error while running plugin '${pluginName}'.`);
+      throw new Error(
+        `Error while running plugin '${pluginName}': ${(err as Error).message}`,
+      );
     }
   }
 
