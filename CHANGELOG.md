@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.0.7]
 ### Added
-- uncaught promise rejection error handling ([#24](https://github.com/MetaMask/iframe-execution-environment/pull/24))
+- Uncaught promise rejection error handling ([#24](https://github.com/MetaMask/iframe-execution-environment/pull/24))
 
 ## [0.0.6]
 ### Fixed
