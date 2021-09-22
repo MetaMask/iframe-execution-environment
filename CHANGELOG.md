@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.7]
+### Uncategorized
+- Bump nth-check from 2.0.0 to 2.0.1 ([#26](https://github.com/MetaMask/iframe-execution-environment/pull/26))
+- Bump tmpl from 1.0.4 to 1.0.5 ([#25](https://github.com/MetaMask/iframe-execution-environment/pull/25))
+- Added uncaught promise rejection error handling ([#24](https://github.com/MetaMask/iframe-execution-environment/pull/24))
+- Bump tar from 6.1.5 to 6.1.11 ([#23](https://github.com/MetaMask/iframe-execution-environment/pull/23))
+
 ## [0.0.6]
 ### Fixed
 - Stop responding twice in case of RPC method errors ([#21](https://github.com/MetaMask/iframe-execution-environment/pull/21))
@@ -38,7 +45,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial implementation of an iframe execution environment for MetaMask Snaps, using `WindowPostMessageStream` for transport.
 
-[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.0.6...HEAD
+[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.0.7...HEAD
+[0.0.7]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.0.6...v0.0.7
 [0.0.6]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.0.5...v0.0.6
 [0.0.5]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.0.4...v0.0.5
 [0.0.4]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.0.3...v0.0.4
