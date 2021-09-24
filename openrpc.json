@@ -6,11 +6,11 @@
   },
   "methods": [
     {
-      "name": "handshake",
+      "name": "ping",
       "description": "confirms that a connection has been established with the execution environment",
       "params": [],
       "result": {
-        "name": "HandshakeResult",
+        "name": "PingResult",
         "schema": {
           "$ref": "#/components/schemas/OK"
         }
