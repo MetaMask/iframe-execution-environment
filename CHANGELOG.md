@@ -7,8 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.1.0]
-### Uncategorized
-- Changed handshake back to ping ([#29](https://github.com/MetaMask/iframe-execution-environment/pull/29))
+### Changed
+- `handshake` back to `ping` ([#29](https://github.com/MetaMask/iframe-execution-environment/pull/29))
 
 ## [0.0.7]
 ### Added
