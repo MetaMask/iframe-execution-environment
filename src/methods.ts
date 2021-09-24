@@ -1,8 +1,8 @@
 import Controller from './controller';
-import { ExecutePlugin, Handshake, PluginRpc } from './__GENERATED_TYPES__';
+import { ExecutePlugin, Ping, PluginRpc } from './__GENERATED_TYPES__';
 
 export interface IframeExecutionEnvironmentMethodMapping {
-  handshake: Handshake;
+  ping: Ping;
   executePlugin: ExecutePlugin;
   pluginRpc: PluginRpc;
 }
@@ -11,7 +11,7 @@ export const methods = (
   context: Controller,
 ): IframeExecutionEnvironmentMethodMapping => {
   return {
-    handshake: async () => {
+    ping: async () => {
       return 'OK';
     },
     executePlugin: async (pluginName, sourceCode) => {
