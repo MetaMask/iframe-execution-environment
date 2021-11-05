@@ -1,10 +1,10 @@
 import Controller from './controller';
-import { ExecutePlugin, Ping, PluginRpc } from './__GENERATED_TYPES__';
+import { ExecuteSnap, Ping, SnapRpc } from './__GENERATED_TYPES__';
 
 export interface IframeExecutionEnvironmentMethodMapping {
   ping: Ping;
-  executePlugin: ExecutePlugin;
-  pluginRpc: PluginRpc;
+  executeSnap: ExecuteSnap;
+  snapRpc: SnapRpc;
 }
 
 export const methods = (
@@ -14,12 +14,12 @@ export const methods = (
     ping: async () => {
       return 'OK';
     },
-    executePlugin: async (pluginName, sourceCode) => {
-      if (pluginName === undefined) {
-        throw new Error('pluginName is not defined');
+    executeSnap: async (snapName, sourceCode) => {
+      if (snapName === undefined) {
+        throw new Error('snapName is not defined');
       }
-      if (typeof pluginName !== 'string') {
-        throw new Error('pluginName is not a string');
+      if (typeof snapName !== 'string') {
+        throw new Error('snapName is not a string');
       }
       if (sourceCode === undefined) {
         throw new Error('sourceCode is not defined');
@@ -27,14 +27,14 @@ export const methods = (
       if (typeof sourceCode !== 'string') {
         throw new Error('sourceCode is not a string');
       }
-      context.startPlugin(pluginName as string, sourceCode as string);
+      context.startSnap(snapName as string, sourceCode as string);
       return 'OK';
     },
-    pluginRpc: async (target, requestOrigin, request) => {
-      const handler = context.pluginRpcHandlers.get(target);
+    snapRpc: async (target, requestOrigin, request) => {
+      const handler = context.snapRpcHandlers.get(target);
 
       if (!handler) {
-        throw new Error(`No RPC handler registered for plugin "${target}".`);
+        throw new Error(`No RPC handler registered for snap "${target}".`);
       }
       return handler(requestOrigin, request) as Promise<any>;
     },

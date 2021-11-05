@@ -17,21 +17,21 @@
       }
     },
     {
-      "name": "executePlugin",
-      "description": "executes a plugin in the environment. The plugin can then be interacted with via `pluginRpc`",
+      "name": "executeSnap",
+      "description": "executes a snap in the environment. The snap can then be interacted with via `snapRpc`",
       "params": [
         {
-          "name": "pluginName",
+          "name": "snapName",
           "required": true,
-          "description": "the name of the plugin",
+          "description": "the name of the snap",
           "schema": {
-            "title": "PluginName",
+            "title": "SnapName",
             "type": "string"
           }
         },
         {
           "name": "sourceCode",
-          "description": "a plugins source code that gets executed in the environment",
+          "description": "a snaps source code that gets executed in the environment",
           "required": true,
           "schema": {
             "title": "SourceCode",
@@ -40,18 +40,18 @@
         }
       ],
       "result": {
-        "name": "executePluginResult",
+        "name": "executeSnapResult",
         "schema": {
           "$ref": "#/components/schemas/OK"
         }
       },
       "examples": [
         {
-          "name": "BasicTestPluginExecuteExample",
+          "name": "BasicTestSnapExecuteExample",
           "params": [
             {
-              "name": "pluginName",
-              "value": "TestPlugin"
+              "name": "snapName",
+              "value": "TestSnap"
             },
             {
               "name": "sourceCode",
@@ -59,19 +59,19 @@
             }
           ],
           "result": {
-            "name": "BasicTestPluginExampleResult",
+            "name": "BasicTestSnapExampleResult",
             "value": "OK"
           }
         }
       ]
     },
     {
-      "name": "pluginRpc",
+      "name": "snapRpc",
       "params": [
         {
           "name": "target",
           "required": true,
-          "description": "the name of the plugin method",
+          "description": "the name of the snap method",
           "schema": {
             "title": "Target",
             "type": "string"
@@ -80,7 +80,7 @@
         {
           "name": "origin",
           "required": true,
-          "description": "Origin of the plugin JSON-RPC request",
+          "description": "Origin of the snap JSON-RPC request",
           "schema": {
             "title": "Origin",
             "type": "string"
@@ -92,7 +92,7 @@
           "description": "JSON-RPC request",
           "schema": {
             "title": "JSONRPCRequest",
-            "description": "JSON-RPC request object to pass through to the plugin",
+            "description": "JSON-RPC request object to pass through to the snap",
             "type": "object",
             "required": ["method", "params"],
             "properties": {
@@ -126,9 +126,9 @@
         }
       ],
       "result": {
-        "name": "HandlePluginRpcResult",
+        "name": "HandleSnapRpcResult",
         "schema": {
-          "title": "PluginRpcResult",
+          "title": "SnapRpcResult",
           "type": "object",
           "properties": {
             "result": true,
@@ -138,11 +138,11 @@
       },
       "examples": [
         {
-          "name": "TestPluginExample",
+          "name": "TestSnapExample",
           "params": [
             {
               "name": "target",
-              "value": "TestPlugin"
+              "value": "TestSnap"
             },
             {
               "name": "origin",
@@ -158,7 +158,7 @@
             }
           ],
           "result": {
-            "name": "TestPluginResultExample",
+            "name": "TestSnapResultExample",
             "value": {
               "jsonrpc": "2.0",
               "id": 1,
