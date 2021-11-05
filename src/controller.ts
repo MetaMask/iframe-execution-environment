@@ -4,7 +4,7 @@ import ObjectMultiplex from '@metamask/object-multiplex';
 import pump from 'pump';
 import { WindowPostMessageStream } from '@metamask/post-message-stream';
 import type { JsonRpcId, JsonRpcRequest } from 'json-rpc-engine';
-import { PluginProvider } from '@mm-snap/types';
+import { PluginProvider as SnapProvider } from '@mm-snap/types';
 import 'isomorphic-fetch'; //eslint-disable-line
 import 'ses'; //eslint-disable-line
 import { ethErrors, serializeError } from 'eth-rpc-errors';
@@ -15,7 +15,7 @@ import { IframeExecutionEnvironmentMethodMapping, methods } from './methods';
 import { JSONRPCRequest } from './__GENERATED_TYPES__';
 import { sortParamKeys } from './helpers/sortParams';
 
-type PluginRpcHandler = (
+type SnapRpcHandler = (
   origin: string,
   request: JSONRPCRequest,
 ) => Promise<unknown>;
@@ -34,7 +34,7 @@ const fallbackError = {
 
 // init
 class Controller {
-  public pluginRpcHandlers: Map<string, PluginRpcHandler>;
+  public snapRpcHandlers: Map<string, SnapRpcHandler>;
 
   private initialized = false;
 
@@ -44,12 +44,12 @@ class Controller {
 
   private methods?: IframeExecutionEnvironmentMethodMapping;
 
-  private pluginErrorHandler?: (event: ErrorEvent) => void;
+  private snapErrorHandler?: (event: ErrorEvent) => void;
 
-  private pluginPromiseErrorHandler?: (event: PromiseRejectionEvent) => void;
+  private snapPromiseErrorHandler?: (event: PromiseRejectionEvent) => void;
 
   constructor() {
-    this.pluginRpcHandlers = new Map();
+    this.snapRpcHandlers = new Map();
   }
 
   public async initialize() {
@@ -177,28 +177,28 @@ class Controller {
   }
 
   /**
-   * Attempts to evaluate a plugin in SES.
-   * Generates the APIs for the plugin. May throw on error.
+   * Attempts to evaluate a snap in SES.
+   * Generates the APIs for the snap. May throw on error.
    *
-   * @param {string} pluginName - The name of the plugin.
-   * @param {Array<string>} approvedPermissions - The plugin's approved permissions.
+   * @param {string} snapName - The name of the snap.
+   * @param {Array<string>} approvedPermissions - The snap's approved permissions.
    * Should always be a value returned from the permissions controller.
-   * @param {string} sourceCode - The source code of the plugin, in IIFE format.
-   * @param {Object} ethereumProvider - The plugin's Ethereum provider object.
+   * @param {string} sourceCode - The source code of the snap, in IIFE format.
+   * @param {Object} ethereumProvider - The snap's Ethereum provider object.
    */
-  public startPlugin(pluginName: string, sourceCode: string) {
-    console.log(`starting plugin '${pluginName}' in worker`);
-    if (this.pluginPromiseErrorHandler) {
+  public startSnap(snapName: string, sourceCode: string) {
+    console.log(`starting snap '${snapName}' in worker`);
+    if (this.snapPromiseErrorHandler) {
       window.removeEventListener(
         'unhandledrejection',
-        this.pluginPromiseErrorHandler,
+        this.snapPromiseErrorHandler,
       );
     }
-    if (this.pluginErrorHandler) {
-      window.removeEventListener('error', this.pluginErrorHandler);
+    if (this.snapErrorHandler) {
+      window.removeEventListener('error', this.snapErrorHandler);
     }
 
-    const wallet = this.createPluginProvider(pluginName);
+    const wallet = this.createSnapProvider(snapName);
 
     const endowments = {
       BigInt,
@@ -215,11 +215,11 @@ class Controller {
       XMLHttpRequest,
     };
 
-    this.pluginErrorHandler = (error: ErrorEvent) => {
-      this.errorHandler(error.error, { pluginName });
+    this.snapErrorHandler = (error: ErrorEvent) => {
+      this.errorHandler(error.error, { snapName });
     };
-    this.pluginPromiseErrorHandler = (error: PromiseRejectionEvent) => {
-      this.errorHandler(error.reason, { pluginName });
+    this.snapPromiseErrorHandler = (error: PromiseRejectionEvent) => {
+      this.errorHandler(error.reason, { snapName });
     };
 
     try {
@@ -231,45 +231,45 @@ class Controller {
 
       window.addEventListener(
         'unhandledrejection',
-        this.pluginPromiseErrorHandler,
+        this.snapPromiseErrorHandler,
       );
-      window.addEventListener('error', this.pluginErrorHandler);
+      window.addEventListener('error', this.snapErrorHandler);
     } catch (err) {
-      this.removePlugin(pluginName);
+      this.removeSnap(snapName);
       throw new Error(
-        `Error while running plugin '${pluginName}': ${(err as Error).message}`,
+        `Error while running snap '${snapName}': ${(err as Error).message}`,
       );
     }
   }
 
   /**
-   * Sets up the given plugin's RPC message handler, creates a hardened
-   * plugin provider object (i.e. globalThis.wallet), and returns it.
+   * Sets up the given snap's RPC message handler, creates a hardened
+   * snap provider object (i.e. globalThis.wallet), and returns it.
    */
-  private createPluginProvider(pluginName: string): PluginProvider {
-    const pluginProvider = (new MetaMaskInpageProvider(this.rpcStream as any, {
+  private createSnapProvider(snapName: string): SnapProvider {
+    const snapProvider = (new MetaMaskInpageProvider(this.rpcStream as any, {
       shouldSendMetadata: false,
-    }) as unknown) as Partial<PluginProvider>;
+    }) as unknown) as Partial<SnapProvider>;
 
-    pluginProvider.registerRpcMessageHandler = (func: PluginRpcHandler) => {
+    snapProvider.registerRpcMessageHandler = (func: SnapRpcHandler) => {
       console.log('Worker: Registering RPC message handler', func);
-      if (this.pluginRpcHandlers.has(pluginName)) {
+      if (this.snapRpcHandlers.has(snapName)) {
         throw new Error('RPC handler already registered.');
       }
-      this.pluginRpcHandlers.set(pluginName, func);
+      this.snapRpcHandlers.set(snapName, func);
     };
 
     // TODO: harden throws an error. Why?
-    // return harden(pluginProvider as PluginProvider);
-    return pluginProvider as PluginProvider;
+    // return harden(snapProvider as SnapProvider);
+    return snapProvider as SnapProvider;
   }
 
   /**
-   * Removes the plugin with the given name. Specifically:
-   * - Deletes the plugin's RPC handler, if any
+   * Removes the snap with the given name. Specifically:
+   * - Deletes the snap's RPC handler, if any
    */
-  private removePlugin(pluginName: string): void {
-    this.pluginRpcHandlers.delete(pluginName);
+  private removeSnap(snapName: string): void {
+    this.snapRpcHandlers.delete(snapName);
   }
 }
 
