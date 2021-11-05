@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.2.0]
 ### Changed
-- Enforce consistent naming for snaps ([#31](https://github.com/MetaMask/iframe-execution-environment/pull/31))
+- **BREAKING:** Enforce consistent naming for Snaps-related functionality ([#31](https://github.com/MetaMask/iframe-execution-environment/pull/31))
 
 ## [0.1.0]
 ### Changed
