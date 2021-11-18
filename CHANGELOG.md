@@ -7,11 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.3.0]
-### Uncategorized
-- Added missing github token to release-pr ([#37](https://github.com/MetaMask/iframe-execution-environment/pull/37))
-- Changed workflow to use latest gh-pages action ([#36](https://github.com/MetaMask/iframe-execution-environment/pull/36))
-- Revert release-pr changes ([#35](https://github.com/MetaMask/iframe-execution-environment/pull/35))
-- Update release-pr.yml to latest gh-pages action ([#34](https://github.com/MetaMask/iframe-execution-environment/pull/34))
+### Added
+- Missing github token to release-pr ([#37](https://github.com/MetaMask/iframe-execution-environment/pull/37))
+
+### Changed
+- Workflow to use latest gh-pages action ([#36](https://github.com/MetaMask/iframe-execution-environment/pull/36))
+- release-pr.yml to latest gh-pages action ([#34](https://github.com/MetaMask/iframe-execution-environment/pull/34))
 
 ## [0.2.0]
 ### Changed
