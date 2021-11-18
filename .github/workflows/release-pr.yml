@@ -35,9 +35,14 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: ${{ steps.nvm.outputs.NODE_VERSION }}
-      - uses: MetaMask/action-create-release-pr@v1
+      - name: Get release version
+        id: version
+        run: |
+          PREFIX='release/'
+          echo ::set-output name=NEW_VERSION::${GITHUB_HEAD_REF#"$PREFIX"}
+      - uses: MetaMask/action-publish-gh-pages@v2
+        with: 
+          source-directory: public
+          destination-directory:  ${{ steps.version.outputs.NEW_VERSION }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          release-type: ${{ github.event.inputs.release-type }}
-          release-version: ${{ github.event.inputs.release-version }}
