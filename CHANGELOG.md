@@ -8,11 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.3.0]
 ### Added
-- Missing github token to release-pr ([#37](https://github.com/MetaMask/iframe-execution-environment/pull/37))
-
-### Changed
-- Workflow to use latest gh-pages action ([#36](https://github.com/MetaMask/iframe-execution-environment/pull/36))
-- release-pr.yml to latest gh-pages action ([#34](https://github.com/MetaMask/iframe-execution-environment/pull/34))
+- Versioned deployment ([#36](https://github.com/MetaMask/iframe-execution-environment/pull/36), [#37](https://github.com/MetaMask/iframe-execution-environment/pull/37))
+  - Future versions of this project will be published to GitHub pages at `https://metamask.github.io/iframe-execution-environment/<version>`, where `<version>` is a version of this project. Previous versions will be retained on GitHub pages so that breaking changes to the execution environment API does not break existing uses of this project.
+  - We will temporarily retain the current version, [0.2.0], of this project at `https://metamask.github.io/iframe-execution-environment` to avoid breaking existing uses of this project. The [0.2.0] distribution of this project will be removed in the near future.
 
 ## [0.2.0]
 ### Changed
