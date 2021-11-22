@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.0]
+### Added
+- Versioned deployment ([#36](https://github.com/MetaMask/iframe-execution-environment/pull/36), [#37](https://github.com/MetaMask/iframe-execution-environment/pull/37))
+  - Future versions of this project will be published to GitHub pages at `https://metamask.github.io/iframe-execution-environment/<version>`, where `<version>` is a version of this project. Previous versions will be retained on GitHub pages so that breaking changes to the execution environment API does not break existing uses of this project.
+  - We will temporarily retain the current version, [0.2.0], of this project at `https://metamask.github.io/iframe-execution-environment` to avoid breaking existing uses of this project. The [0.2.0] distribution of this project will be removed in the near future.
+
 ## [0.2.0]
 ### Changed
 - **BREAKING:** Enforce consistent naming for Snaps-related functionality ([#31](https://github.com/MetaMask/iframe-execution-environment/pull/31))
@@ -50,7 +56,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial implementation of an iframe execution environment for MetaMask Snaps, using `WindowPostMessageStream` for transport.
 
-[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.0.7...v0.1.0
 [0.0.7]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.0.6...v0.0.7
