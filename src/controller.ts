@@ -12,7 +12,11 @@ import EEOpenRPCDocument from '../openrpc.json';
 import { STREAM_NAMES } from './enums';
 
 import { IframeExecutionEnvironmentMethodMapping, methods } from './methods';
-import { JSONRPCRequest } from './__GENERATED_TYPES__';
+import {
+  Endowments,
+  JSONRPCRequest,
+  StringDoaGddGA,
+} from './__GENERATED_TYPES__';
 import { sortParamKeys } from './helpers/sortParams';
 
 type SnapRpcHandler = (
@@ -184,9 +188,13 @@ class Controller {
    * @param {Array<string>} approvedPermissions - The snap's approved permissions.
    * Should always be a value returned from the permissions controller.
    * @param {string} sourceCode - The source code of the snap, in IIFE format.
-   * @param {Object} ethereumProvider - The snap's Ethereum provider object.
+   * @param {Array} endowments - An array of the names of the endowments.
    */
-  public startSnap(snapName: string, sourceCode: string) {
+  public startSnap(
+    snapName: string,
+    sourceCode: string,
+    _endowments: Endowments,
+  ) {
     console.log(`starting snap '${snapName}' in worker`);
     if (this.snapPromiseErrorHandler) {
       window.removeEventListener(
@@ -200,13 +208,13 @@ class Controller {
 
     const wallet = this.createSnapProvider(snapName);
 
-    const endowments = {
+    const endowments: Record<string, any> = {
       BigInt,
       Buffer,
       console, // Adding raw console for now
       crypto: window.crypto,
       Date,
-      fetch: window.fetch.bind(window),
+      // fetch: window.fetch.bind(window),
       Math, // Math.random is considered unsafe, but we need it
       setTimeout,
       SubtleCrypto: window.SubtleCrypto,
@@ -214,6 +222,12 @@ class Controller {
       WebSocket,
       XMLHttpRequest,
     };
+
+    if (_endowments && _endowments.length > 0) {
+      _endowments.forEach((_endowment) => {
+        endowments[_endowment] = (window as any)[_endowment].bind(window);
+      });
+
 
     this.snapErrorHandler = (error: ErrorEvent) => {
       this.errorHandler(error.error, { snapName });
