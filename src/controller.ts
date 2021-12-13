@@ -225,7 +225,14 @@ class Controller {
 
     if (_endowments && _endowments.length > 0) {
       _endowments.forEach((_endowment) => {
-        endowments[_endowment] = (window as any)[_endowment].bind(window);
+        if (!(_endowment in window)) {
+          throw new Error(`Unknown endowment: "${_endowment}".`);
+        }
+
+        
+        endowments[_endowment] = typeof globalValue === 'function'
+          ? globalValue.bind(window)
+          : globalValue;
       });
     }
 
