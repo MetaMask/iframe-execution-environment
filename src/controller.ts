@@ -214,7 +214,6 @@ class Controller {
       console, // Adding raw console for now
       crypto: window.crypto,
       Date,
-      // fetch: window.fetch.bind(window),
       Math, // Math.random is considered unsafe, but we need it
       setTimeout,
       SubtleCrypto: window.SubtleCrypto,
