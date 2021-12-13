@@ -227,6 +227,7 @@ class Controller {
       _endowments.forEach((_endowment) => {
         endowments[_endowment] = (window as any)[_endowment].bind(window);
       });
+    }
 
     this.snapErrorHandler = (error: ErrorEvent) => {
       this.errorHandler(error.error, { snapName });
