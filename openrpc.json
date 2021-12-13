@@ -40,7 +40,7 @@
         },
         {
           "name": "endowments",
-          "description": "a list of endowments to provide to SES",
+          "description": "A list of endowments to provide to SES",
           "schema": {
             "title": "Endowments",
             "description": "An array of the names of the endowments",
