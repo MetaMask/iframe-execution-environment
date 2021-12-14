@@ -18,14 +18,20 @@ export const createTimeout = () => {
       );
     }
 
-    const handle = setTimeout(handler, timeout);
-    registeredTimeouts.add(handle);
-    return handle;
+    const handleWrapper: { handle: number } = { handle: NaN };
+    handleWrapper.handle = setTimeout(() => {
+      registeredTimeouts.delete(handleWrapper.handle);
+      handler();
+    }, timeout);
+
+    registeredTimeouts.add(handleWrapper.handle);
+    return handleWrapper.handle;
   };
 
   const _clearTimeout = (handle: number): void => {
     if (registeredTimeouts.has(handle)) {
       clearTimeout(handle);
+      registeredTimeouts.delete(handle);
     }
   };
 
