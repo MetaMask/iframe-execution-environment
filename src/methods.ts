@@ -14,7 +14,7 @@ export const methods = (
     ping: async () => {
       return 'OK';
     },
-    executeSnap: async (snapName, sourceCode) => {
+    executeSnap: async (snapName, sourceCode, endowments) => {
       if (snapName === undefined) {
         throw new Error('snapName is not defined');
       }
@@ -27,7 +27,7 @@ export const methods = (
       if (typeof sourceCode !== 'string') {
         throw new Error('sourceCode is not a string');
       }
-      context.startSnap(snapName as string, sourceCode as string);
+      context.startSnap(snapName as string, sourceCode as string, endowments);
       return 'OK';
     },
     snapRpc: async (target, requestOrigin, request) => {

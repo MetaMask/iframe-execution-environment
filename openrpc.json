@@ -37,6 +37,19 @@
             "title": "SourceCode",
             "type": "string"
           }
+        },
+        {
+          "name": "endowments",
+          "description": "A list of endowments to provide to SES",
+          "schema": {
+            "title": "Endowments",
+            "description": "An array of the names of the endowments",
+            "type": "array",
+            "items": {
+              "title": "Endowment",
+              "type": "string"
+            }
+          }
         }
       ],
       "result": {
