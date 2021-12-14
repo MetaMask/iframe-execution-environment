@@ -214,8 +214,6 @@ class Controller {
       setTimeout,
       SubtleCrypto: window.SubtleCrypto,
       wallet,
-      WebSocket,
-      XMLHttpRequest,
     };
 
     if (_endowments && _endowments.length > 0) {
