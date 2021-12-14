@@ -12,11 +12,7 @@ import EEOpenRPCDocument from '../openrpc.json';
 import { STREAM_NAMES } from './enums';
 
 import { IframeExecutionEnvironmentMethodMapping, methods } from './methods';
-import {
-  Endowments,
-  JSONRPCRequest,
-  StringDoaGddGA,
-} from './__GENERATED_TYPES__';
+import { Endowments, JSONRPCRequest } from './__GENERATED_TYPES__';
 import { sortParamKeys } from './helpers/sortParams';
 
 type SnapRpcHandler = (
@@ -228,10 +224,11 @@ class Controller {
           throw new Error(`Unknown endowment: "${_endowment}".`);
         }
 
-        
-        endowments[_endowment] = typeof globalValue === 'function'
-          ? globalValue.bind(window)
-          : globalValue;
+        const globalValue = (window as any)[_endowment];
+        endowments[_endowment] =
+          typeof globalValue === 'function'
+            ? globalValue.bind(window)
+            : globalValue;
       });
     }
 
