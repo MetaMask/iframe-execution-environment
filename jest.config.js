@@ -6,10 +6,10 @@ module.exports = {
   coverageReporters: ['text', 'html'],
   coverageThreshold: {
     global: {
-      branches: 100,
-      functions: 100,
-      lines: 100,
-      statements: 100,
+      branches: 5,
+      functions: 12,
+      lines: 9,
+      statements: 10,
     },
   },
   moduleFileExtensions: ['js', 'json', 'jsx', 'ts', 'tsx', 'node'],
@@ -21,7 +21,7 @@ module.exports = {
   // original implementations, between each test. It does not affect mocked
   // modules.
   restoreMocks: true,
-  testEnvironment: 'node',
+  testEnvironment: 'jsdom',
   testRegex: ['\\.test\\.(ts|js)$'],
   testTimeout: 2500,
 };

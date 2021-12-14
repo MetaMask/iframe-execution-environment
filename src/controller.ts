@@ -14,6 +14,7 @@ import { STREAM_NAMES } from './enums';
 import { IframeExecutionEnvironmentMethodMapping, methods } from './methods';
 import { Endowments, JSONRPCRequest } from './__GENERATED_TYPES__';
 import { sortParamKeys } from './helpers/sortParams';
+import { createTimeout } from './timeout';
 
 type SnapRpcHandler = (
   origin: string,
@@ -207,13 +208,13 @@ class Controller {
     const endowments: Record<string, any> = {
       BigInt,
       Buffer,
-      console, // Adding raw console for now
+      console,
       crypto: window.crypto,
       Date,
-      Math, // Math.random is considered unsafe, but we need it
-      setTimeout,
+      Math,
       SubtleCrypto: window.SubtleCrypto,
       wallet,
+      ...createTimeout(),
     };
 
     if (_endowments && _endowments.length > 0) {
