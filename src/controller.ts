@@ -211,7 +211,7 @@ class Controller {
       console,
       crypto: window.crypto,
       Date,
-      Math, // Math.random is considered unsafe, but we need it
+      Math,
       SubtleCrypto: window.SubtleCrypto,
       wallet,
       ...createTimeout(),
