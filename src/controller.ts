@@ -6,7 +6,7 @@ import { WindowPostMessageStream } from '@metamask/post-message-stream';
 import type { JsonRpcId, JsonRpcRequest } from 'json-rpc-engine';
 import { PluginProvider as SnapProvider } from '@mm-snap/types';
 import 'isomorphic-fetch'; //eslint-disable-line
-import 'ses'; //eslint-disable-line
+
 import { ethErrors, serializeError } from 'eth-rpc-errors';
 import EEOpenRPCDocument from '../openrpc.json';
 import { STREAM_NAMES } from './enums';
@@ -20,13 +20,6 @@ type SnapRpcHandler = (
   origin: string,
   request: JSONRPCRequest,
 ) => Promise<unknown>;
-
-lockdown({
-  // TODO: Which would we use in prod?
-  mathTaming: 'unsafe',
-  errorTaming: 'unsafe',
-  dateTaming: 'unsafe',
-});
 
 const fallbackError = {
   code: -32603,
