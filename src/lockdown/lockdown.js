@@ -1,5 +1,3 @@
-/* eslint-disable import/unambiguous */
-/* eslint-disable no-undef */
 try {
   lockdown({
     consoleTaming: 'unsafe',

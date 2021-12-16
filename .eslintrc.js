@@ -8,22 +8,34 @@ module.exports = {
       files: ['*.ts'],
       extends: ['@metamask/eslint-config-typescript'],
     },
+
     {
-      files: ['*.ts'],
-      env: {
-        browser: true,
-      },
-      rules: {
-        'node/no-unpublished-import': 'off',
-      },
-    },
-    {
-      files: ['*.js'],
+      files: ['./*.js'],
       parserOptions: {
         ecmaVersion: 2018,
         sourceType: 'script',
       },
       extends: ['@metamask/eslint-config-nodejs'],
+    },
+
+    {
+      files: ['src/**/*.js', 'src/**/*.ts'],
+      env: {
+        browser: true,
+      },
+      globals: {
+        Compartment: 'readonly',
+        globalThis: 'readonly',
+        harden: 'readonly',
+        lockdown: 'readonly',
+      },
+    },
+
+    {
+      files: ['src/lockdown/*.js'],
+      rules: {
+        'import/unambiguous': 'off',
+      },
     },
 
     {

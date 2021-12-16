@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/triple-slash-reference, spaced-comment
+/// <reference path="../node_modules/ses/index.d.ts" />
 import { Duplex } from 'stream';
 import { MetaMaskInpageProvider } from '@metamask/inpage-provider';
 import ObjectMultiplex from '@metamask/object-multiplex';
@@ -5,7 +7,7 @@ import pump from 'pump';
 import { WindowPostMessageStream } from '@metamask/post-message-stream';
 import type { JsonRpcId, JsonRpcRequest } from 'json-rpc-engine';
 import { PluginProvider as SnapProvider } from '@mm-snap/types';
-import 'isomorphic-fetch'; //eslint-disable-line
+import 'isomorphic-fetch'; // eslint-disable-line import/no-unassigned-import
 
 import { ethErrors, serializeError } from 'eth-rpc-errors';
 import EEOpenRPCDocument from '../openrpc.json';
@@ -15,12 +17,6 @@ import { IframeExecutionEnvironmentMethodMapping, methods } from './methods';
 import { Endowments, JSONRPCRequest } from './__GENERATED_TYPES__';
 import { sortParamKeys } from './helpers/sortParams';
 import { createTimeout } from './timeout';
-
-declare class Compartment {
-  constructor(...args: any);
-
-  evaluate(...args: any): any;
-}
 
 type SnapRpcHandler = (
   origin: string,

@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-/* eslint-disable import/unambiguous */
 // Make all "object" and "function" own properties of globalThis
 // non-configurable and non-writable, when possible.
 // We call a property that is non-configurable and non-writable,
