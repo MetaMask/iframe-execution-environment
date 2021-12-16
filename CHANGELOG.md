@@ -8,10 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.3.1]
 ### Added
-- lockdown-more + update ses to ^0.15.3 ([#42](https://github.com/MetaMask/iframe-execution-environment/pull/42))
-- Optional endowments param to executeSnap ([#39](https://github.com/MetaMask/iframe-execution-environment/pull/39))
+- Optional `endowments` param to `executeSnap` RPC method ([#39](https://github.com/MetaMask/iframe-execution-environment/pull/39))
+
+### Changed
+- **BREAKING:** Update ses to `^0.15.3` and harden all named intrinsics ([#42](https://github.com/MetaMask/iframe-execution-environment/pull/42))
+
 ### Fixed
-- SES endowment safety issues ([#40](https://github.com/MetaMask/iframe-execution-environment/pull/40))
+- SES `Compartment` endowment safety issues ([#40](https://github.com/MetaMask/iframe-execution-environment/pull/40))
 
 ## [0.3.0]
 ### Added
