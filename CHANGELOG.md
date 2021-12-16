@@ -7,10 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.3.1]
-### Uncategorized
+### Added
 - Added lockdown-more + update ses to ^0.15.3 ([#42](https://github.com/MetaMask/iframe-execution-environment/pull/42))
-- Fix SES endowment safety issues ([#40](https://github.com/MetaMask/iframe-execution-environment/pull/40))
 - Added optional endowments param to executeSnap ([#39](https://github.com/MetaMask/iframe-execution-environment/pull/39))
+### Fixed
+- Fix SES endowment safety issues ([#40](https://github.com/MetaMask/iframe-execution-environment/pull/40))
 
 ## [0.3.0]
 ### Added
