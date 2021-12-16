@@ -12,9 +12,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - **BREAKING:** Update ses to `^0.15.3` and harden all named intrinsics ([#42](https://github.com/MetaMask/iframe-execution-environment/pull/42))
+  - This is unlikely to be breaking for consumers, but it _could_ cause behavioral changes.
 
 ### Fixed
-- SES `Compartment` endowment safety issues ([#40](https://github.com/MetaMask/iframe-execution-environment/pull/40))
+- **BREAKING:** SES `Compartment` endowment safety issues ([#40](https://github.com/MetaMask/iframe-execution-environment/pull/40))
+  - This required removing some endowments that were previously available by default.
 
 ## [0.3.0]
 ### Added
