@@ -506,10 +506,32 @@
     "@json-schema-tools/traverse" "^1.7.5"
     fast-safe-stringify "^2.0.7"
 
+"@json-schema-tools/dereferencer@1.5.3":
+  version "1.5.3"
+  resolved "https://registry.yarnpkg.com/@json-schema-tools/dereferencer/-/dereferencer-1.5.3.tgz#0d3c0e3ecd3a99c83367d61a26bac2c46e503a7a"
+  integrity sha512-m5OhsfstuYwPX0EFrwIu4BDm/V0CzNXhkrSzIKh/grpxzrWuRz0AKi9m6NhfcE9NuONlOHTjmSB78+ktem+sSA==
+  dependencies:
+    "@json-schema-tools/reference-resolver" "^1.2.2"
+    "@json-schema-tools/traverse" "^1.7.8"
+    fast-safe-stringify "^2.0.7"
+
+"@json-schema-tools/meta-schema@1.6.19":
+  version "1.6.19"
+  resolved "https://registry.yarnpkg.com/@json-schema-tools/meta-schema/-/meta-schema-1.6.19.tgz#295301c2d4a0c01eb2eafbf605aca8ebc0dfbbb6"
+  integrity sha512-55zuWFW7tr4tf/G5AYmybcPdGOkVAreQbt2JdnogX4I2r/zkxZiimYPJESDf5je9BI2oRveak2p296HzDppeaA==
+
 "@json-schema-tools/meta-schema@^1.6.10":
   version "1.6.18"
   resolved "https://registry.yarnpkg.com/@json-schema-tools/meta-schema/-/meta-schema-1.6.18.tgz#6d60eab6d65744d676035a8f6921289dd8425c64"
   integrity sha512-x9UvOPrn6eEVw9h9KmhEdJurkuRZG/W1YwAqjF0hmIKsDy7nlc6cqBpZoIOADaiXF4SjAK6xV7cqlqVTBwVN9Q==
+
+"@json-schema-tools/reference-resolver@1.2.3", "@json-schema-tools/reference-resolver@^1.2.2":
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/@json-schema-tools/reference-resolver/-/reference-resolver-1.2.3.tgz#01feb01833cf94deba87923c0c3980a8e2d449a3"
+  integrity sha512-Bc7TjkuSy9PnQDeIenA3aU1cgh2/Wh042sxTfEaav38+Jf+2+U2kMBmMKS4nZLCR+L0fh71V3IwE2FMJleQCGw==
+  dependencies:
+    "@json-schema-spec/json-pointer" "^0.1.2"
+    isomorphic-fetch "^3.0.0"
 
 "@json-schema-tools/reference-resolver@^1.2.1":
   version "1.2.2"
@@ -697,7 +719,7 @@
   resolved "https://registry.yarnpkg.com/@open-rpc/meta-schema/-/meta-schema-1.14.2.tgz#1af0b1ea77e50b5076ae31267e97efcb9ff352f8"
   integrity sha512-vD4Nbkrb7wYFRcSQf+j228LwOy1C6/KKpy5NADlpMElGrAWPRxhTa2yTi6xG+x88OHzg2+cydQ0GAD6o40KUcg==
 
-"@open-rpc/schema-utils-js@1.15.0", "@open-rpc/schema-utils-js@^1.15.0":
+"@open-rpc/schema-utils-js@1.15.0":
   version "1.15.0"
   resolved "https://registry.yarnpkg.com/@open-rpc/schema-utils-js/-/schema-utils-js-1.15.0.tgz#59bbc92ab25c9b6b08f96d37995ee61e4c062fdc"
   integrity sha512-YHTt3n3RZo1lRy8oknn2G1y0PWlo7HWtnwLOKfvVxjauKMOmlvBbpPHQZibpzIhgt+yPe4mht1ldhKOwq2tCUw==
@@ -705,6 +727,22 @@
     "@json-schema-tools/dereferencer" "1.5.1"
     "@json-schema-tools/meta-schema" "^1.6.10"
     "@json-schema-tools/reference-resolver" "^1.2.1"
+    "@open-rpc/meta-schema" "1.14.2"
+    ajv "^6.10.0"
+    detect-node "^2.0.4"
+    fast-safe-stringify "^2.0.7"
+    fs-extra "^9.0.0"
+    is-url "^1.2.4"
+    isomorphic-fetch "^3.0.0"
+
+"@open-rpc/schema-utils-js@^1.15.0":
+  version "1.16.0"
+  resolved "https://registry.yarnpkg.com/@open-rpc/schema-utils-js/-/schema-utils-js-1.16.0.tgz#ef2a281921c473b37a6e4d209c6d013cdf6c1687"
+  integrity sha512-DkQnjjOVmRBuGA5DCxL+kWhIugYHROtcH3z5tH+RdmxIFGCaPpvAnWNkWtIH0NxVpVulUMsqaP3tmCWYjC2o7Q==
+  dependencies:
+    "@json-schema-tools/dereferencer" "1.5.3"
+    "@json-schema-tools/meta-schema" "1.6.19"
+    "@json-schema-tools/reference-resolver" "1.2.3"
     "@open-rpc/meta-schema" "1.14.2"
     ajv "^6.10.0"
     detect-node "^2.0.4"

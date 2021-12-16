@@ -43,6 +43,7 @@
     "@metamask/eslint-config-nodejs": "^7.0.0",
     "@metamask/eslint-config-typescript": "^7.0.0",
     "@mm-snap/types": "^0.0.5",
+    "@open-rpc/schema-utils-js": "^1.15.0",
     "@open-rpc/typings": "^1.11.4",
     "@types/jest": "^26.0.13",
     "@types/pump": "^1.1.1",
