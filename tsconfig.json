@@ -16,7 +16,6 @@
   "include": [
     "./src/**/*.ts",
     "./openrpc.json",
-    "src/lockdown-more.js",
     "src/lockdown/lockdown.js",
     "src/lockdown/lockdown-more.js"
   ]
