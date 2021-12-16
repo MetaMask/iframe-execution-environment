@@ -1,5 +1,5 @@
-import 'ses'; //eslint-disable-line
-
+/* eslint-disable import/unambiguous */
+/* eslint-disable no-undef */
 try {
   lockdown({
     consoleTaming: 'unsafe',
@@ -8,7 +8,6 @@ try {
     dateTaming: 'unsafe',
     overrideTaming: 'severe',
   });
-  console.log('locked down.');
 } catch (error) {
   // If the `lockdown` call throws an exception, it should not be able to continue
   console.error('Lockdown failed:', error);

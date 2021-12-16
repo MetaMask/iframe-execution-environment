@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable import/unambiguous */
 // Make all "object" and "function" own properties of globalThis
 // non-configurable and non-writable, when possible.
@@ -62,8 +63,8 @@ try {
           }
         }
 
-        if (shouldHardenManually.has(propertyName.toString())) {
-          harden((globalThis as any)[propertyName.toString()]);
+        if (shouldHardenManually.has(propertyName)) {
+          harden(globalThis[propertyName]);
         }
       }
     });
@@ -78,10 +79,9 @@ try {
      * @param {Object} descriptor - The propertyName descriptor to check.
      * @returns {boolean} Whether the propertyName descriptor has any accessors.
      */
-    function hasAccessor(descriptor: any) {
+    function hasAccessor(descriptor) {
       return 'set' in descriptor || 'get' in descriptor;
     }
-    console.log('locked down more.');
   })();
 } catch (error) {
   console.error('Protecting intrinsics failed:', error);

@@ -16,6 +16,12 @@ import { Endowments, JSONRPCRequest } from './__GENERATED_TYPES__';
 import { sortParamKeys } from './helpers/sortParams';
 import { createTimeout } from './timeout';
 
+declare class Compartment {
+  constructor(...args: any);
+
+  evaluate(...args: any): any;
+}
+
 type SnapRpcHandler = (
   origin: string,
   request: JSONRPCRequest,
@@ -232,7 +238,7 @@ class Controller {
     };
 
     try {
-      const compartment = new Compartment({
+      const compartment = new Compartment({ //eslint-disable-line
         ...endowments,
         window: { ...endowments },
       });
