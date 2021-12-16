@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.1]
+### Uncategorized
+- Added lockdown-more + update ses to ^0.15.3 ([#42](https://github.com/MetaMask/iframe-execution-environment/pull/42))
+- Fix SES endowment safety issues ([#40](https://github.com/MetaMask/iframe-execution-environment/pull/40))
+- Added optional endowments param to executeSnap ([#39](https://github.com/MetaMask/iframe-execution-environment/pull/39))
+
 ## [0.3.0]
 ### Added
 - Versioned deployment ([#36](https://github.com/MetaMask/iframe-execution-environment/pull/36), [#37](https://github.com/MetaMask/iframe-execution-environment/pull/37))
@@ -56,7 +62,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial implementation of an iframe execution environment for MetaMask Snaps, using `WindowPostMessageStream` for transport.
 
-[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.3.1...HEAD
+[0.3.1]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.0.7...v0.1.0
