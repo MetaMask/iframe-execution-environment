@@ -238,7 +238,7 @@ class Controller {
     };
 
     try {
-      const compartment = new Compartment({ //eslint-disable-line
+      const compartment = new Compartment({
         ...endowments,
         window: { ...endowments },
       });
