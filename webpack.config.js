@@ -1,6 +1,7 @@
 const path = require('path');
 const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const DIST = path.resolve(__dirname, 'public');
 const prefix = require('./package.json').homepage;
@@ -31,7 +32,18 @@ module.exports = (_, argv) => {
       writeToDisk: true,
     },
     plugins: [
-      new HtmlWebpackPlugin(htmlwebpackOptions),
+      new CopyPlugin({
+        patterns: [
+          {
+            from: path.resolve('./node_modules/ses/dist/lockdown.umd.min.js'),
+            to: '.',
+          },
+        ],
+      }),
+      new HtmlWebpackPlugin({
+        ...htmlwebpackOptions,
+        template: 'index.html',
+      }),
       new NodePolyfillPlugin(),
     ],
     module: {

@@ -86,7 +86,7 @@
     "isomorphic-fetch": "^3.0.0",
     "json-rpc-engine": "^6.1.0",
     "pump": "^3.0.0",
-    "ses": "^0.13.4",
+    "ses": "^0.15.3",
     "stream-browserify": "^3.0.0"
   }
 }

@@ -13,5 +13,10 @@
     "target": "ES2017"
   },
   "exclude": ["./src/**/*.test.ts"],
-  "include": ["./src/**/*.ts", "./openrpc.json"]
+  "include": [
+    "./src/**/*.ts",
+    "./openrpc.json",
+    "src/lockdown/lockdown.js",
+    "src/lockdown/lockdown-more.js"
+  ]
 }
