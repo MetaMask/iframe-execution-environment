@@ -7,8 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.3.2-test]
-### Uncategorized
-- Remove lockdown-more
+### Changed
+- Remove lockdown-more for testing purposes
 
 ## [0.3.1]
 ### Added
