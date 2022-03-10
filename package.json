@@ -19,7 +19,8 @@
     "lint:misc": "prettier '**/*.json' '**/*.md' '!CHANGELOG.md' '**/*.yml' '**/*.html' --ignore-path .gitignore",
     "lint": "yarn lint:eslint && yarn lint:misc --check",
     "lint:fix": "yarn lint:eslint --fix && yarn lint:misc --write",
-    "build": "node scripts/build.js"
+    "build": "node scripts/build.js",
+    "start": "node scripts/start.js 6363"
   },
   "dependencies": {
     "@metamask/execution-environments": "^0.10.0",
@@ -36,7 +37,8 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.3.1",
     "prettier": "^2.2.1",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "serve-handler": "^6.1.3"
   },
   "lavamoat": {
     "allowScripts": {
