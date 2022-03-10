@@ -12,6 +12,11 @@ const LOCKDOWN_FILE_NAME = 'lockdown.umd.min.js';
 
 main();
 
+/**
+ * Our build process for the iframe execution environment website. In detail:
+ * - Deletes and rewrites the destination directory, `/public`
+ * - Copies `index.html` and our JavaScript bundles to the destination directory
+ */
 async function main() {
   await rimraf(DIST);
   await mkdir(DIST);
