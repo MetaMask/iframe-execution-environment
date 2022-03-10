@@ -73,10 +73,7 @@ node_modules/
 .yarn/install-state.gz
 .pnp.*
 
-
-
 # build
 
 public/
-src/__GENERATED_TYPES__/
 
