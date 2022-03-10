@@ -4,6 +4,11 @@ const { PUBLIC } = require('./common');
 
 start();
 
+/**
+ * Starts a simple HTTP server, serving the `<root>/public` directory. Expects
+ * that the first positional argument to the Node process is a valid integer
+ * port.
+ */
 async function start() {
   const port = parseInt(process.argv[2], 10);
   if (!Number.isSafeInteger(port) || port < 0) {
