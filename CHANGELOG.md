@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0]
+### Changed
+- **BREAKING:** Use [@metamask/execution-environments](https://npmjs.com/package/@metamask/execution-environments) ([#52](https://github.com/MetaMask/iframe-execution-environment/pull/52))
+  - The implementation of the execution environment has moved from this package to `@metamask/execution-environments`, and several breaking changes were introduced. See the [changelog of the new package](https://github.com/MetaMask/snaps-skunkworks/blob/main/packages/execution-environments/CHANGELOG.md#0100) for details.
+
 ## [0.3.1]
 ### Added
 - Optional `endowments` param to `executeSnap` RPC method ([#39](https://github.com/MetaMask/iframe-execution-environment/pull/39))
@@ -68,7 +73,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial implementation of an iframe execution environment for MetaMask Snaps, using `WindowPostMessageStream` for transport.
 
-[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.3.1...HEAD
+[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.3.1...v0.4.0
 [0.3.1]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.1.0...v0.2.0
