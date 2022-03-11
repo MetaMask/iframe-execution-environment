@@ -7,8 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.4.0]
-### Uncategorized
-- Use @metamask/execution-environments ([#52](https://github.com/MetaMask/iframe-execution-environment/pull/52))
+### Changed
+- **BREAKING:** Use [@metamask/execution-environments](https://npmjs.com/package/@metamask/execution-environments) ([#52](https://github.com/MetaMask/iframe-execution-environment/pull/52))
+  - The implementation of the execution environment has moved from this package to `@metamask/execution-environments`, and several breaking changes were introduced. See the [changelog of the new package](https://github.com/MetaMask/snaps-skunkworks/blob/main/packages/execution-environments/CHANGELOG.md#0100) for details.
 
 ## [0.3.1]
 ### Added
