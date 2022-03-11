@@ -20,7 +20,7 @@
     "lint": "yarn lint:eslint && yarn lint:misc --check",
     "lint:fix": "yarn lint:eslint --fix && yarn lint:misc --write",
     "build": "node scripts/build.js",
-    "start": "node scripts/start.js 6363"
+    "start": "node scripts/start.js"
   },
   "dependencies": {
     "@metamask/execution-environments": "^0.10.0",

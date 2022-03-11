@@ -10,7 +10,7 @@ start();
  * port.
  */
 async function start() {
-  const port = parseInt(process.argv[2], 10);
+  const port = parseInt(process.argv[2] ?? 6363, 10);
   if (!Number.isSafeInteger(port) || port < 0) {
     throw new Error(`Invalid port: "${port}"`);
   }
