@@ -7,9 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.4.1]
-### Uncategorized
-- @metamask/execution-environments@0.10.4 ([#56](https://github.com/MetaMask/iframe-execution-environment/pull/56))
-- Bump @metamask/execution-environments from 0.10.0 to 0.10.2 ([#55](https://github.com/MetaMask/iframe-execution-environment/pull/55))
+### Fixed
+- Fix function and class endowments ([#56](https://github.com/MetaMask/iframe-execution-environment/pull/56))
+  - Accomplished by updating `@metamask/execution-environments` to `0.10.4`.
 
 ## [0.4.0]
 ### Changed
