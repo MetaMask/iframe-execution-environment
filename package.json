@@ -23,7 +23,7 @@
     "start": "node scripts/start.js"
   },
   "dependencies": {
-    "@metamask/execution-environments": "^0.10.4",
+    "@metamask/execution-environments": "^0.10.6",
     "ses": "^0.15.11"
   },
   "devDependencies": {
