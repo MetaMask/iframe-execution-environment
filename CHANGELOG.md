@@ -7,8 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.4.3]
-### Uncategorized
-- @metamask/execution-environments@0.10.7 ([#61](https://github.com/MetaMask/iframe-execution-environment/pull/61))
+### Added
+- Add setInterval and clearInterval as default endowments ([#61](https://github.com/MetaMask/iframe-execution-environment/pull/61))
+  - Accomplished by updating `@metamask/execution-environments` to `0.10.7`.
+
+### Changed
+- **BREAKING:** Bump minimum Node version from 12 to 14 ([#61](https://github.com/MetaMask/iframe-execution-environment/pull/61))
+  - Accomplished by updating `@metamask/execution-environments` to `0.10.7`.
+### Fixed
+- Fix missing properties on WebAssembly endowment ([#61](https://github.com/MetaMask/iframe-execution-environment/pull/61))
+  - Accomplished by updating `@metamask/execution-environments` to `0.10.7`.
 
 ## [0.4.2]
 ### Fixed
