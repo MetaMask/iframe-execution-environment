@@ -7,8 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.4.4]
-### Uncategorized
-- @metamask/execution-environments@0.11.0 ([#65](https://github.com/MetaMask/iframe-execution-environment/pull/65))
+### Changed
+- Bump `@metamask/execution-environments` to `0.11.0` and `ses` to `0.15.15` ([#65](https://github.com/MetaMask/iframe-execution-environment/pull/65))
 - Bump minimist from 1.2.5 to 1.2.6 ([#62](https://github.com/MetaMask/iframe-execution-environment/pull/62))
 
 ## [0.4.3]
