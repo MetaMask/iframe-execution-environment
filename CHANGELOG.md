@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.4]
+### Changed
+- Bump `@metamask/execution-environments` to `0.11.0` and `ses` to `0.15.15` ([#65](https://github.com/MetaMask/iframe-execution-environment/pull/65))
+- Bump minimist from 1.2.5 to 1.2.6 ([#62](https://github.com/MetaMask/iframe-execution-environment/pull/62))
+
 ## [0.4.3]
 ### Added
 - Add setInterval and clearInterval as default endowments ([#61](https://github.com/MetaMask/iframe-execution-environment/pull/61))
@@ -97,7 +102,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial implementation of an iframe execution environment for MetaMask Snaps, using `WindowPostMessageStream` for transport.
 
-[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.4.3...HEAD
+[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.4.4...HEAD
+[0.4.4]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.4.3...v0.4.4
 [0.4.3]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.4.2...v0.4.3
 [0.4.2]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.4.1...v0.4.2
 [0.4.1]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.4.0...v0.4.1
