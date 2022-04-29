@@ -20,10 +20,12 @@
     "lint": "yarn lint:eslint && yarn lint:misc --check",
     "lint:fix": "yarn lint:eslint --fix && yarn lint:misc --write",
     "build": "node scripts/build.js",
-    "start": "node scripts/start.js"
+    "start": "node scripts/start.js",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@metamask/execution-environments": "^0.11.0",
+    "postinstall-postinstall": "^2.1.0",
     "ses": "^0.15.15"
   },
   "devDependencies": {
@@ -36,6 +38,7 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.3.1",
+    "patch-package": "^6.4.7",
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",
     "serve-handler": "^6.1.3"
