@@ -12,7 +12,7 @@
     "node": ">=16.0.0"
   },
   "scripts": {
-    "setup": "yarn install && yarn allow-scripts",
+    "setup": "yarn install && yarn allow-scripts && yarn postinstall",
     "test": "echo 'No tests specified' && exit 0",
     "prepublishOnly": "yarn build && yarn lint && yarn test",
     "lint:eslint": "eslint . --cache --ext js,ts",
@@ -25,7 +25,6 @@
   },
   "dependencies": {
     "@metamask/execution-environments": "^0.11.0",
-    "postinstall-postinstall": "^2.1.0",
     "ses": "^0.15.15"
   },
   "devDependencies": {
