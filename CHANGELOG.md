@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.5]
+### Added
+- Add support for endowment teardown ([#69](https://github.com/MetaMask/iframe-execution-environment/pull/69))
+  - Accomplished by updating `@metamask/execution-environments` to `0.12.0`.
+
+### Changed
+- Bump cross-fetch from 2.2.5 to 2.2.6 ([#70](https://github.com/MetaMask/iframe-execution-environment/pull/70))
+
 ## [0.4.4]
 ### Changed
 - Bump `@metamask/execution-environments` to `0.11.0` and `ses` to `0.15.15` ([#65](https://github.com/MetaMask/iframe-execution-environment/pull/65))
@@ -102,7 +110,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial implementation of an iframe execution environment for MetaMask Snaps, using `WindowPostMessageStream` for transport.
 
-[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.4.4...HEAD
+[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.4.5...HEAD
+[0.4.5]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.4.4...v0.4.5
 [0.4.4]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.4.3...v0.4.4
 [0.4.3]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.4.2...v0.4.3
 [0.4.2]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.4.1...v0.4.2
