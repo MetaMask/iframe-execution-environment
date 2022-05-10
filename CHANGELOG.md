@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Add support for endowment teardown ([#69](https://github.com/MetaMask/iframe-execution-environment/pull/69))
   - Accomplished by updating `@metamask/execution-environments` to `0.12.0`.
+
 ### Changed
 - Bump cross-fetch from 2.2.5 to 2.2.6 ([#70](https://github.com/MetaMask/iframe-execution-environment/pull/70))
 
