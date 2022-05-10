@@ -7,10 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.4.5]
-### Uncategorized
+### Added
+- Add support for endowment teardown ([#69](https://github.com/MetaMask/iframe-execution-environment/pull/69))
+  - Accomplished by updating `@metamask/execution-environments` to `0.12.0`.
+### Changed
 - Bump cross-fetch from 2.2.5 to 2.2.6 ([#70](https://github.com/MetaMask/iframe-execution-environment/pull/70))
-- Bump @metamask/execution-environments from 0.11.1 to 0.12.0 ([#69](https://github.com/MetaMask/iframe-execution-environment/pull/69))
-- Bump @metamask/execution-environments from 0.11.0 to 0.11.1 ([#67](https://github.com/MetaMask/iframe-execution-environment/pull/67))
 
 ## [0.4.4]
 ### Changed
