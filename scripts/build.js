@@ -22,7 +22,10 @@ async function main() {
 
   // public/index.html
   await copyFile(
-    path.join(ROOT, HTML_FILE_NAME),
+    path.join(
+      NODE_MODULES,
+      '@metamask/execution-environments/dist/webpack/iframe/index.html',
+    ),
     path.join(PUBLIC, HTML_FILE_NAME),
   );
 
@@ -36,7 +39,7 @@ async function main() {
   await copyFile(
     path.join(
       NODE_MODULES,
-      '@metamask/execution-environments/dist/iframe.bundle.js',
+      '@metamask/execution-environments/dist/webpack/iframe/bundle.js',
     ),
     path.join(PUBLIC, 'bundle.js'),
   );
