@@ -7,10 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.4.6]
-### Uncategorized
-- Bump @metamask/execution-environments from 0.14.0 to 0.15.0 ([#75](https://github.com/MetaMask/iframe-execution-environment/pull/75))
-- Bump @metamask/auto-changelog from 2.5.0 to 2.6.0 ([#74](https://github.com/MetaMask/iframe-execution-environment/pull/74))
-- @metamask/execution-environments@0.14.0 ([#73](https://github.com/MetaMask/iframe-execution-environment/pull/73))
+### Fixed
+- Added missing properties to WebAssembly global ([#75](https://github.com/MetaMask/iframe-execution-environment/pull/75))
+  - Accomplished by updating `@metamask/execution-environments` to `0.15.0`.
+- Fix interval handle leak ([#75](https://github.com/MetaMask/iframe-execution-environment/pull/75))
+  - Accomplished by updating `@metamask/execution-environments` to `0.15.0`.
+- Fix timer handle leak ([#75](https://github.com/MetaMask/iframe-execution-environment/pull/75))
+  - Accomplished by updating `@metamask/execution-environments` to `0.15.0`.
 
 ## [0.4.5]
 ### Added
