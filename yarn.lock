@@ -743,15 +743,16 @@
     tweetnacl "^1.0.3"
     tweetnacl-util "^0.15.1"
 
-"@metamask/execution-environments@^0.14.0":
-  version "0.14.0"
-  resolved "https://registry.yarnpkg.com/@metamask/execution-environments/-/execution-environments-0.14.0.tgz#594e2d3671c4e7d07725d4547561cba1fa441354"
-  integrity sha512-M7z/vLMZrtJ1sksUmyh161WDndNVw4PXilAz42WYuuVLz2j4jeUnYNwLml9DamoT9XSPtwiodhyEyikJsGg8JA==
+"@metamask/execution-environments@^0.15.0":
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/@metamask/execution-environments/-/execution-environments-0.15.0.tgz#1c08229e4853b750fb532862cd1eac8443510133"
+  integrity sha512-qUDNAgdmXkZDqD/BQgBH20cyuIYKsGriABf87xLL1XMxvwIPrv+Rzzg71DnFt67CKO63haZ2rcOn/yXcNiOwzA==
   dependencies:
     "@metamask/object-multiplex" "^1.2.0"
     "@metamask/post-message-stream" "^4.0.0"
     "@metamask/providers" "^8.1.1"
-    "@metamask/snap-types" "^0.14.0"
+    "@metamask/snap-types" "^0.15.0"
+    "@metamask/utils" "^2.0.0"
     eth-rpc-errors "^4.0.3"
     pump "^3.0.0"
     ses "^0.15.15"
@@ -809,10 +810,10 @@
   resolved "https://registry.yarnpkg.com/@metamask/safe-event-emitter/-/safe-event-emitter-2.0.0.tgz#af577b477c683fad17c619a78208cede06f9605c"
   integrity sha512-/kSXhY692qiV1MXu6EeOZvg5nECLclxNXcKCxJ3cXQgYuRymRHpdx/t7JXfsK+JLjwA1e1c1/SBrlQYpusC29Q==
 
-"@metamask/snap-types@^0.14.0":
-  version "0.14.0"
-  resolved "https://registry.yarnpkg.com/@metamask/snap-types/-/snap-types-0.14.0.tgz#efd85f430061a61cbb4c4185256de50518a367fa"
-  integrity sha512-sM661jKNpkM3MeNAoG9oqejh86vqv/0uI9TDuDbu/s9AZciuHPknYwmuYjaXXWxGOkUogfkWSZHHrb0Ge2s8wg==
+"@metamask/snap-types@^0.15.0":
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/@metamask/snap-types/-/snap-types-0.15.0.tgz#ccf8ea495e9823430de4e6ca1d979ae10f25177e"
+  integrity sha512-U6fRnB4qUZVSWJl08V1+UqJjf8m4DzhORCQ6HL8BHg4Npfg7Zn5luFTfS6y6dXVDAydIB6JJr43efEcAgcEsdA==
   dependencies:
     "@metamask/controllers" "^29.0.1"
 
@@ -820,6 +821,13 @@
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@metamask/types/-/types-1.1.0.tgz#9bd14b33427932833c50c9187298804a18c2e025"
   integrity sha512-EEV/GjlYkOSfSPnYXfOosxa3TqYtIW3fhg6jdw+cok/OhMgNn4wCfbENFqjytrHMU2f7ZKtBAvtiP5V8H44sSw==
+
+"@metamask/utils@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@metamask/utils/-/utils-2.0.0.tgz#fe7e970416a256751c429f4a5e96aec6c4366ba7"
+  integrity sha512-AZ63AhRxAZXll+/SEiyEXgrxuAL4yOj0ny4V36VgPmTDvt+7GrmVJWrQF3o5PZZWV6ooaHZ9291RZHRcKZm0HA==
+  dependencies:
+    fast-deep-equal "^3.1.3"
 
 "@ngraveio/bc-ur@^1.1.5":
   version "1.1.6"
