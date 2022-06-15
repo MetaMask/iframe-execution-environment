@@ -6,6 +6,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.0]
+### Changed
+- **BREAKING:** Snaps are now required to export `onRpcRequest` to receive RPC requests  ([#78](https://github.com/MetaMask/iframe-execution-environment/pull/78))
+  - Accomplished by updating `@metamask/execution-environments` to `0.16.0`.
+- Snaps can no longer run timers outside of pending RPC requests  ([#78](https://github.com/MetaMask/iframe-execution-environment/pull/78))
+  - Accomplished by updating `@metamask/execution-environments` to `0.16.0`.
+
+### Removed
+- **BREAKING:** Remove `wallet.registerRpcMessageHandler support` ([#78](https://github.com/MetaMask/iframe-execution-environment/pull/78))
+  - Accomplished by updating `@metamask/execution-environments` to `0.16.0`.
+
+### Fixed
+- Fix issue with iframe error reporting ([#78](https://github.com/MetaMask/iframe-execution-environment/pull/78))
+  - Accomplished by updating `@metamask/execution-environments` to `0.16.0`.
+
 ## [0.4.6]
 ### Fixed
 - Added missing properties to WebAssembly global ([#75](https://github.com/MetaMask/iframe-execution-environment/pull/75))
@@ -119,7 +134,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial implementation of an iframe execution environment for MetaMask Snaps, using `WindowPostMessageStream` for transport.
 
-[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.4.6...HEAD
+[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.5.0...HEAD
+[0.5.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.4.6...v0.5.0
 [0.4.6]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.4.5...v0.4.6
 [0.4.5]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.4.4...v0.4.5
 [0.4.4]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.4.3...v0.4.4
