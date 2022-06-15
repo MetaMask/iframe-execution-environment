@@ -7,8 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.5.0]
-### Uncategorized
-- Bump @metamask/execution-environments from 0.15.0 to 0.16.0 ([#78](https://github.com/MetaMask/iframe-execution-environment/pull/78))
+### Changed
+- **BREAKING:** Snaps are now required to export `onRpcRequest` to receive RPC requests  ([#78](https://github.com/MetaMask/iframe-execution-environment/pull/78))
+  - Accomplished by updating `@metamask/execution-environments` to `0.16.0`.
+- Snaps can no longer run timers outside of pending RPC requests  ([#78](https://github.com/MetaMask/iframe-execution-environment/pull/78))
+  - Accomplished by updating `@metamask/execution-environments` to `0.16.0`.
+
+### Removed
+- **BREAKING:** Remove `wallet.registerRpcMessageHandler support` ([#78](https://github.com/MetaMask/iframe-execution-environment/pull/78))
+  - Accomplished by updating `@metamask/execution-environments` to `0.16.0`.
+
+### Fixed
+- Fix issue with iframe error reporting ([#78](https://github.com/MetaMask/iframe-execution-environment/pull/78))
+  - Accomplished by updating `@metamask/execution-environments` to `0.16.0`.
 
 ## [0.4.6]
 ### Fixed
