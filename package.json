@@ -23,8 +23,8 @@
     "start": "node scripts/start.js"
   },
   "dependencies": {
-    "@metamask/execution-environments": "^0.16.0",
-    "ses": "^0.15.15"
+    "@metamask/execution-environments": "^0.17.0",
+    "ses": "^0.15.17"
   },
   "devDependencies": {
     "@lavamoat/allow-scripts": "^1.0.5",
