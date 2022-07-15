@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.1]
+### Uncategorized
+- Bump execution-environments and ses ([#81](https://github.com/MetaMask/iframe-execution-environment/pull/81))
+- Bump @metamask/auto-changelog from 2.6.0 to 2.6.1 ([#80](https://github.com/MetaMask/iframe-execution-environment/pull/80))
+
 ## [0.5.0]
 ### Changed
 - **BREAKING:** Snaps are now required to export `onRpcRequest` to receive RPC requests  ([#78](https://github.com/MetaMask/iframe-execution-environment/pull/78))
@@ -134,7 +139,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial implementation of an iframe execution environment for MetaMask Snaps, using `WindowPostMessageStream` for transport.
 
-[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.5.0...HEAD
+[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.5.1...HEAD
+[0.5.1]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.5.0...v0.5.1
 [0.5.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.4.6...v0.5.0
 [0.4.6]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.4.5...v0.4.6
 [0.4.5]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.4.4...v0.4.5
