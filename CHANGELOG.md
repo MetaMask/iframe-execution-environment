@@ -7,9 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.5.1]
-### Uncategorized
-- Bump execution-environments and ses ([#81](https://github.com/MetaMask/iframe-execution-environment/pull/81))
-- Bump @metamask/auto-changelog from 2.6.0 to 2.6.1 ([#80](https://github.com/MetaMask/iframe-execution-environment/pull/80))
+### Added
+- Added network endowment teardown ([#81](https://github.com/MetaMask/iframe-execution-environment/pull/81))
+  - Accomplished by updating `@metamask/execution-environments` to `0.18.0`.
+
+### Changed
+- Monitor outbound snap requests to pause request timeout ([#81](https://github.com/MetaMask/iframe-execution-environment/pull/81))
+  - Accomplished by updating `@metamask/execution-environments` to `0.18.0`.
 
 ## [0.5.0]
 ### Changed
