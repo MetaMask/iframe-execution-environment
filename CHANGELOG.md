@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.5.2]
 ### Fixed
 - Fix error serialization issues ([#84](https://github.com/MetaMask/iframe-execution-environment/pull/84))
-  -  Accomplished by updating `@metamask/execution-environments` to `0.18.1`.
+  - Accomplished by updating `@metamask/execution-environments` to `0.18.1`.
 
 ## [0.5.1]
 ### Added
