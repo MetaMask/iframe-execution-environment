@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.0]
+### Fixed
+- Send valid JSON-RPC notifications from executors ([#87](https://github.com/MetaMask/iframe-execution-environment/pull/87))
+  - Accomplished by updating `@metamask/execution-environments` to `0.19.0`.
+
 ## [0.5.2]
 ### Fixed
 - Fix error serialization issues ([#84](https://github.com/MetaMask/iframe-execution-environment/pull/84))
@@ -148,7 +153,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial implementation of an iframe execution environment for MetaMask Snaps, using `WindowPostMessageStream` for transport.
 
-[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.5.2...HEAD
+[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.6.0...HEAD
+[0.6.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.5.2...v0.6.0
 [0.5.2]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.5.1...v0.5.2
 [0.5.1]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.5.0...v0.5.1
 [0.5.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.4.6...v0.5.0
