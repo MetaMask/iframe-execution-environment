@@ -15,7 +15,6 @@
     "lint:fix": "yarn lint:eslint --fix && yarn lint:misc --write",
     "lint:misc": "prettier '**/*.json' '**/*.md' '!CHANGELOG.md' '**/*.yml' '**/*.html' --ignore-path .gitignore",
     "prepublishOnly": "yarn build && yarn lint && yarn test",
-    "setup": "yarn install",
     "start": "node scripts/start.js",
     "test": "echo 'No tests specified' && exit 0"
   },
