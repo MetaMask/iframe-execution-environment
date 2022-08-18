@@ -44,11 +44,9 @@
   "lavamoat": {
     "allowScripts": {
       "@lavamoat/preinstall-always-fail": false,
-      "fsevents": false,
-      "@metamask/execution-environments": false,
-      "keccak": false,
-      "secp256k1": false,
-      "core-js": false
+      "@metamask/execution-environments>@metamask/snap-types>@metamask/controllers>babel-runtime>core-js": false,
+      "@metamask/execution-environments>@metamask/snap-types>@metamask/controllers>ethereumjs-util>ethereum-cryptography>keccak": false,
+      "@metamask/execution-environments>@metamask/snap-types>@metamask/controllers>ethereumjs-util>ethereum-cryptography>secp256k1": false
     }
   }
 }
