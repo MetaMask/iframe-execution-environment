@@ -7,9 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.6.0]
-### Uncategorized
-- @metamask/execution-environments@0.19.0 ([#87](https://github.com/MetaMask/iframe-execution-environment/pull/87))
-- Migrate to Yarn 3 ([#86](https://github.com/MetaMask/iframe-execution-environment/pull/86))
+### Fixed
+- Send valid JSON-RPC notifications from executors ([#87](https://github.com/MetaMask/iframe-execution-environment/pull/87))
+  - Accomplished by updating `@metamask/execution-environments` to `0.19.0`.
 
 ## [0.5.2]
 ### Fixed
