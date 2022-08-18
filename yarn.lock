@@ -960,20 +960,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@metamask/execution-environments@npm:^0.18.1":
-  version: 0.18.1
-  resolution: "@metamask/execution-environments@npm:0.18.1"
+"@metamask/execution-environments@npm:^0.19.0":
+  version: 0.19.0
+  resolution: "@metamask/execution-environments@npm:0.19.0"
   dependencies:
     "@metamask/object-multiplex": ^1.2.0
     "@metamask/post-message-stream": ^6.0.0
     "@metamask/providers": ^9.0.0
-    "@metamask/snap-types": ^0.18.1
+    "@metamask/snap-types": ^0.19.0
     "@metamask/utils": ^2.0.0
     eth-rpc-errors: ^4.0.3
     pump: ^3.0.0
     ses: ^0.15.15
     stream-browserify: ^3.0.0
-  checksum: 447bb386a78d9f731695d9560ecf6e54be1e35d72487e813f36e480388347a8397a9b0d1d2f37597f97b59bf0d76a75cf3b568fd0bcf4e4f628e1cb880de2054
+  checksum: cfd24589a4310883d401ef97b289b1e7c0215be7b8f50cac36c411d90e4cef2c5e5820082d72b3cb4ee3a194b66414cb9cd6558dc9130705ab9c89af8d450f1c
   languageName: node
   linkType: hard
 
@@ -985,7 +985,7 @@ __metadata:
     "@metamask/auto-changelog": ^2.6.1
     "@metamask/eslint-config": ^9.0.0
     "@metamask/eslint-config-nodejs": ^9.0.0
-    "@metamask/execution-environments": ^0.18.1
+    "@metamask/execution-environments": ^0.19.0
     eslint: ^7.23.0
     eslint-config-prettier: ^8.1.0
     eslint-plugin-import: ^2.22.1
@@ -1065,12 +1065,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@metamask/snap-types@npm:^0.18.1":
-  version: 0.18.1
-  resolution: "@metamask/snap-types@npm:0.18.1"
+"@metamask/snap-types@npm:^0.19.0":
+  version: 0.19.0
+  resolution: "@metamask/snap-types@npm:0.19.0"
   dependencies:
     "@metamask/controllers": ^30.0.0
-  checksum: 4c68e284c3912fce20cd5801d702c32aa4eaf7bb74587a138e7a0654b63186ee4f3529f2b76d4bec3a0a689cd147d1609352b37f0b643e8754b47eb76c836b72
+  checksum: abfd186212b52eefb83724bf90d8c10d7aa2b20dcfdfff668ad99644073095ff7f7452682c1ef10cf95ec61fe283f73ba5e272e916e71e07ca118b35f2124546
   languageName: node
   linkType: hard
 
