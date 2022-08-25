@@ -7,8 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.7.0]
-### Uncategorized
-- `@metamask/execution-environments@0.20.0` ([#90](https://github.com/MetaMask/iframe-execution-environment/pull/90))
+### Added
+- **BREAKING:** Add Transaction Insight API ([#90](https://github.com/MetaMask/iframe-execution-environment/pull/90))
+  - Accomplished by updating `@metamask/execution-environments` to `0.20.0`.
+  - Part of this change made changes to the execution environments to support multiple request handlers, hence the breaking change.
 
 ## [0.6.0]
 ### Fixed
