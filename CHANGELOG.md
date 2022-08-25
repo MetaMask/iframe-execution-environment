@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.7.0]
+### Added
+- **BREAKING:** Add Transaction Insight API ([#90](https://github.com/MetaMask/iframe-execution-environment/pull/90))
+  - Accomplished by updating `@metamask/execution-environments` to `0.20.0`.
+  - Part of this change made changes to the execution environments to support multiple request handlers, hence the breaking change.
+
 ## [0.6.0]
 ### Fixed
 - Send valid JSON-RPC notifications from executors ([#87](https://github.com/MetaMask/iframe-execution-environment/pull/87))
@@ -153,7 +159,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial implementation of an iframe execution environment for MetaMask Snaps, using `WindowPostMessageStream` for transport.
 
-[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.6.0...HEAD
+[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.7.0...HEAD
+[0.7.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.5.2...v0.6.0
 [0.5.2]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.5.1...v0.5.2
 [0.5.1]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.5.0...v0.5.1
