@@ -7,8 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.8.0]
-### Uncategorized
-- Bump `@metamask/execution-environments` to `0.21.0` ([#92](https://github.com/MetaMask/iframe-execution-environment/pull/92))
+### Removed
+- **BREAKING:** Remove origin parameter from transaction insight payload ([#92](https://github.com/MetaMask/iframe-execution-environment/pull/92))
+  - Accomplished by bumping `@metamask/execution-environments` to `0.21.0`
 
 ## [0.7.0]
 ### Added
