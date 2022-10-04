@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.9.0]
+### Uncategorized
+- `execution-environments@0.22.0` and `ses@0.15.23` ([#95](https://github.com/MetaMask/iframe-execution-environment/pull/95))
+
 ## [0.8.0]
 ### Removed
 - **BREAKING:** Remove origin parameter from transaction insight payload ([#92](https://github.com/MetaMask/iframe-execution-environment/pull/92))
@@ -164,7 +168,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial implementation of an iframe execution environment for MetaMask Snaps, using `WindowPostMessageStream` for transport.
 
-[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.8.0...HEAD
+[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.9.0...HEAD
+[0.9.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.8.0...v0.9.0
 [0.8.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.7.0...v0.8.0
 [0.7.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.5.2...v0.6.0
