@@ -7,8 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.9.0]
-### Uncategorized
-- `execution-environments@0.22.0` and `ses@0.15.23` ([#95](https://github.com/MetaMask/iframe-execution-environment/pull/95))
+### Added
+- Add Snap Keyring support ([#95](https://github.com/MetaMask/iframe-execution-environment/pull/95))
+  - Accomplished by bumping `@metamask/execution-environments` to `0.22.0`
 
 ## [0.8.0]
 ### Removed
