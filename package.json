@@ -19,7 +19,7 @@
     "test": "echo 'No tests specified' && exit 0"
   },
   "dependencies": {
-    "@metamask/execution-environments": "^0.22.0",
+    "@metamask/execution-environments": "^0.22.2",
     "ses": "^0.15.23"
   },
   "devDependencies": {
