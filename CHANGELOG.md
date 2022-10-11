@@ -7,8 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.9.1]
-### Uncategorized
-- Bump execution-environments to 0.22.2 ([#98](https://github.com/MetaMask/iframe-execution-environment/pull/98))
+### Fixed
+- Throw an error when response is unserializable ([#98](https://github.com/MetaMask/iframe-execution-environment/pull/98))
+  - Accomplished by bumping `@metamask/execution-environments` to `0.22.2`
 
 ## [0.9.0]
 ### Added
