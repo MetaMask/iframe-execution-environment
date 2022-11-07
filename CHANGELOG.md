@@ -7,9 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.10.0]
-### Uncategorized
-- `execution-environments@0.23.0` and `ses@0.17.0` ([#101](https://github.com/MetaMask/iframe-execution-environment/pull/101))
-- Delete dependabot.yml ([#100](https://github.com/MetaMask/iframe-execution-environment/pull/100))
+### Added
+- Add snap cronjobs ([#101](https://github.com/MetaMask/iframe-execution-environment/pull/101))
+  - Accomplished by bumping `@metamask/execution-environments` to `0.23.0`
+
+### Changed
+- **BREAKING:** Replace Buffer with Typed Arrays ([#101](https://github.com/MetaMask/iframe-execution-environment/pull/101))
+  - Accomplished by bumping `@metamask/execution-environments` to `0.23.0`
+- Improve execution environment type validation ([#101](https://github.com/MetaMask/iframe-execution-environment/pull/101))
+  - Accomplished by bumping `@metamask/execution-environments` to `0.23.0`
 
 ## [0.9.1]
 ### Fixed
