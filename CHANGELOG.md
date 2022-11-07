@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.10.0]
+### Added
+- Add snap cronjobs ([#101](https://github.com/MetaMask/iframe-execution-environment/pull/101))
+  - Accomplished by bumping `@metamask/execution-environments` to `0.23.0`
+
+### Changed
+- **BREAKING:** Replace Buffer with Typed Arrays ([#101](https://github.com/MetaMask/iframe-execution-environment/pull/101))
+  - Accomplished by bumping `@metamask/execution-environments` to `0.23.0`
+- Improve execution environment type validation ([#101](https://github.com/MetaMask/iframe-execution-environment/pull/101))
+  - Accomplished by bumping `@metamask/execution-environments` to `0.23.0`
+
 ## [0.9.1]
 ### Fixed
 - Throw an error when response is unserializable ([#98](https://github.com/MetaMask/iframe-execution-environment/pull/98))
@@ -174,7 +185,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial implementation of an iframe execution environment for MetaMask Snaps, using `WindowPostMessageStream` for transport.
 
-[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.9.1...HEAD
+[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.10.0...HEAD
+[0.10.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.9.1...v0.10.0
 [0.9.1]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.9.0...v0.9.1
 [0.9.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.8.0...v0.9.0
 [0.8.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.7.0...v0.8.0
