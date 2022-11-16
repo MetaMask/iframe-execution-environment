@@ -7,8 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.11.0]
-### Uncategorized
-- execution-environments@0.24.0 and ses@0.18.0 ([#103](https://github.com/MetaMask/iframe-execution-environment/pull/103))
+### Added
+- Add transaction insight caveat for accessing transaction origin ([#103](https://github.com/MetaMask/iframe-execution-environment/pull/103))
+  - Accomplished by bumping `@metamask/snaps-execution-environments` to `0.24.0`
+- Add `Math` endowment factory ([#103](https://github.com/MetaMask/iframe-execution-environment/pull/103))
+  - Accomplished by bumping `@metamask/snaps-execution-environments` to `0.24.0`
+
+### Changed
+- **BREAKING:** Remove `wallet` global in favor of `snap` and `ethereum` ([#103](https://github.com/MetaMask/iframe-execution-environment/pull/103))
+  - Accomplished by bumping `@metamask/snaps-execution-environments` to `0.24.0`
 
 ## [0.10.0]
 ### Added
