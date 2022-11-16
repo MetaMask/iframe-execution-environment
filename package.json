@@ -19,8 +19,8 @@
     "test": "echo 'No tests specified' && exit 0"
   },
   "dependencies": {
-    "@metamask/execution-environments": "^0.23.0",
-    "ses": "^0.17.0"
+    "@metamask/snaps-execution-environments": "^0.24.0",
+    "ses": "^0.18.0"
   },
   "devDependencies": {
     "@lavamoat/allow-scripts": "^2.0.3",
