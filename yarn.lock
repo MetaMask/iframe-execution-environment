@@ -400,7 +400,7 @@ __metadata:
     "@metamask/auto-changelog": ^3.1.0
     "@metamask/eslint-config": ^9.0.0
     "@metamask/eslint-config-nodejs": ^9.0.0
-    "@metamask/snaps-execution-environments": ^0.24.0
+    "@metamask/snaps-execution-environments": ^0.25.0
     eslint: ^7.23.0
     eslint-config-prettier: ^8.1.0
     eslint-plugin-import: ^2.22.1
@@ -437,8 +437,8 @@ __metadata:
   linkType: hard
 
 "@metamask/providers@npm:^10.2.0":
-  version: 10.2.0
-  resolution: "@metamask/providers@npm:10.2.0"
+  version: 10.2.1
+  resolution: "@metamask/providers@npm:10.2.1"
   dependencies:
     "@metamask/object-multiplex": ^1.1.0
     "@metamask/safe-event-emitter": ^2.0.0
@@ -449,10 +449,10 @@ __metadata:
     fast-deep-equal: ^2.0.1
     is-stream: ^2.0.0
     json-rpc-engine: ^6.1.0
-    json-rpc-middleware-stream: ^4.2.0
+    json-rpc-middleware-stream: ^4.2.1
     pump: ^3.0.0
     webextension-polyfill-ts: ^0.25.0
-  checksum: a20b637281ca1bfdb20fdf2886148fb40ffca4c6aa07194753ea92f5beb4f91961834440173c8ccfc3f1eb172d1dfb441c6825d1332bca5163007fabfaca3bcd
+  checksum: e88b2db8c4673cc6a7e47d9f0531df3fac73f05f8e9ff6d02c3420dfb3c7a82335d9c44876f2d472c44eac36d66491d2022be4f39600bee561d5de8ad59c5b07
   languageName: node
   linkType: hard
 
@@ -463,15 +463,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@metamask/snaps-execution-environments@npm:^0.24.0":
-  version: 0.24.0
-  resolution: "@metamask/snaps-execution-environments@npm:0.24.0"
+"@metamask/snaps-execution-environments@npm:^0.25.0":
+  version: 0.25.0
+  resolution: "@metamask/snaps-execution-environments@npm:0.25.0"
   dependencies:
     "@metamask/object-multiplex": ^1.2.0
     "@metamask/post-message-stream": ^6.0.0
     "@metamask/providers": ^10.2.0
-    "@metamask/snaps-types": ^0.24.0
-    "@metamask/snaps-utils": ^0.24.0
+    "@metamask/snaps-types": ^0.25.0
+    "@metamask/snaps-utils": ^0.25.0
     "@metamask/utils": ^3.3.1
     eth-rpc-errors: ^4.0.3
     json-rpc-engine: ^6.1.0
@@ -479,28 +479,28 @@ __metadata:
     ses: ^0.17.0
     stream-browserify: ^3.0.0
     superstruct: ^0.16.7
-  checksum: 5342d5cc7539c5360cf1b81ceaf84aaa0a255b53fd042aa60047f8270a71a0a8226897c5d65b3df97ce656a7a2cef039ff224778473c372cc643f11cf326d414
+  checksum: 2595e17fc36a8a4ee09254d85470bc35c0a728161cf327816a93486e94552195138cc7487631d58c6f50d0c0435d315976496533fbb96e6b7d384314f8754a6d
   languageName: node
   linkType: hard
 
-"@metamask/snaps-types@npm:^0.24.0":
-  version: 0.24.0
-  resolution: "@metamask/snaps-types@npm:0.24.0"
+"@metamask/snaps-types@npm:^0.25.0":
+  version: 0.25.0
+  resolution: "@metamask/snaps-types@npm:0.25.0"
   dependencies:
     "@metamask/providers": ^10.2.0
-    "@metamask/snaps-utils": ^0.24.0
+    "@metamask/snaps-utils": ^0.25.0
     "@metamask/types": ^1.1.0
-  checksum: e9cf2aa9800c584afab5e9e41bcdde0d56ed56df26f44de65a61cc028dd85e94160511b931a146159ede36a34274202a4592bd172b1293dab1fa2cc507b52056
+  checksum: e0c1497447845779023c81a4c9c649118dacd9b40dfdc92f4f030184fa310973d63c064ef8a06b0fcf430c4ac06b3942290b0edeafcd8d658ff8306676ca2820
   languageName: node
   linkType: hard
 
-"@metamask/snaps-utils@npm:^0.24.0":
-  version: 0.24.0
-  resolution: "@metamask/snaps-utils@npm:0.24.0"
+"@metamask/snaps-utils@npm:^0.25.0":
+  version: 0.25.0
+  resolution: "@metamask/snaps-utils@npm:0.25.0"
   dependencies:
     "@babel/core": ^7.18.6
     "@babel/types": ^7.18.7
-    "@metamask/snaps-types": ^0.24.0
+    "@metamask/snaps-types": ^0.25.0
     "@metamask/utils": ^3.3.1
     "@noble/hashes": ^1.1.3
     "@scure/base": ^1.1.1
@@ -511,7 +511,7 @@ __metadata:
     semver: ^7.3.7
     ses: ^0.17.0
     superstruct: ^0.16.7
-  checksum: 665c68606fbf392e236d4b4abf205fc549b6e2bf7363eb4905be0c97bde0993ec5d0e2e4bd58aab8ec418b1658914d4250fd5802d80ed3ff888b35b64e1d1da1
+  checksum: 77fd921fbc55adb954c3ec5473cdfd46628d21accea5b8dbbc5a97bbb0115f0839f94c686691ff048a8fa156562ef6374f5e99f8864118808ae2429b12dc5aac
   languageName: node
   linkType: hard
 
@@ -523,11 +523,11 @@ __metadata:
   linkType: hard
 
 "@metamask/utils@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "@metamask/utils@npm:2.0.0"
+  version: 2.1.0
+  resolution: "@metamask/utils@npm:2.1.0"
   dependencies:
     fast-deep-equal: ^3.1.3
-  checksum: 517afc6724e58aee889b9962fcedc0345cb264ed8232756cd16e2d47e22b5501af276986a3d84a9ab903075d20802bf38ff4f6a70c58a158666f18cb69ff458d
+  checksum: 50970fe28cbf98fbc34fb4f69d9bc90f5db94929c69ab532f57b48f42163ea77fb080ab31854efd984361c3e29e67831a78d94d1211ac3bcc6b9557769c73127
   languageName: node
   linkType: hard
 
@@ -2357,13 +2357,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"json-rpc-middleware-stream@npm:^4.2.0":
-  version: 4.2.0
-  resolution: "json-rpc-middleware-stream@npm:4.2.0"
+"json-rpc-middleware-stream@npm:^4.2.1":
+  version: 4.2.1
+  resolution: "json-rpc-middleware-stream@npm:4.2.1"
   dependencies:
     "@metamask/safe-event-emitter": ^2.0.0
     readable-stream: ^2.3.3
-  checksum: eccdac47843f2cf6bb0344d2e509791307c2f2e6358ac5b78a7a14c0a079deb0851ed41b68d6126b7ed413a7ff364bb6e98907dcd06f3cf4a032246865e41c59
+  checksum: 207c34ba2c55ff072864422ba48b03f49dd1bc488f0d9c017c7474d3f2514bd4b1cc14daf5324f96887cdaf8e5c1018701960f55fb45e9c3224e3d7db9f70765
   languageName: node
   linkType: hard
 
