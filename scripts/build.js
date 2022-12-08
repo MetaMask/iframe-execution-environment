@@ -1,6 +1,7 @@
 const { copyFile, mkdir } = require('fs/promises');
 const path = require('path');
 const { promisify } = require('util');
+
 const rimraf = promisify(require('rimraf'));
 const { PUBLIC, ROOT } = require('./common');
 
