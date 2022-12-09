@@ -492,14 +492,14 @@ __metadata:
   linkType: hard
 
 "@metamask/snaps-execution-environments@npm:^0.26.0":
-  version: 0.26.0
-  resolution: "@metamask/snaps-execution-environments@npm:0.26.0"
+  version: 0.26.1
+  resolution: "@metamask/snaps-execution-environments@npm:0.26.1"
   dependencies:
     "@metamask/object-multiplex": ^1.2.0
     "@metamask/post-message-stream": ^6.0.0
     "@metamask/providers": ^10.2.0
-    "@metamask/snaps-types": ^0.26.0
-    "@metamask/snaps-utils": ^0.26.0
+    "@metamask/snaps-types": ^0.26.1
+    "@metamask/snaps-utils": ^0.26.1
     "@metamask/utils": ^3.3.1
     eth-rpc-errors: ^4.0.3
     json-rpc-engine: ^6.1.0
@@ -507,28 +507,28 @@ __metadata:
     ses: ^0.17.0
     stream-browserify: ^3.0.0
     superstruct: ^0.16.7
-  checksum: faf8f91819b410da507fe30d789f85bbbf84668314301d22d7267c0ec5e04ad020bbede8bce5bd57db0e7be6b29ea351878a8d4deec71128cb1a7c79b4037433
+  checksum: 4a5328bd8e329a9e55e96a534e28fcc1cd4ec9eb51cb3323820e8692541fe78cb64e63e36341c172df4e59df79c0dcddbfb01df1efccefd26f23870a48f465a8
   languageName: node
   linkType: hard
 
-"@metamask/snaps-types@npm:^0.26.0":
-  version: 0.26.0
-  resolution: "@metamask/snaps-types@npm:0.26.0"
+"@metamask/snaps-types@npm:^0.26.1":
+  version: 0.26.1
+  resolution: "@metamask/snaps-types@npm:0.26.1"
   dependencies:
     "@metamask/providers": ^10.2.0
-    "@metamask/snaps-utils": ^0.26.0
+    "@metamask/snaps-utils": ^0.26.1
     "@metamask/types": ^1.1.0
-  checksum: 7ddb7ad1580e8b03b2710e002a8008f2f7bf8704930dc4f799d4fb71beb127d85a2bef6d685c09fd28f39496f5bc5ecf3d7db231ad2c00a111841f984c6c23d2
+  checksum: 9597e8dc8acd5f45dd397571a0d10e8106552566b4831fdc7363a5722f3120a4422f45bf37f7a32a927a7804874aad5c7a2a34236668c694f541021711bd0b90
   languageName: node
   linkType: hard
 
-"@metamask/snaps-utils@npm:^0.26.0":
-  version: 0.26.0
-  resolution: "@metamask/snaps-utils@npm:0.26.0"
+"@metamask/snaps-utils@npm:^0.26.1":
+  version: 0.26.1
+  resolution: "@metamask/snaps-utils@npm:0.26.1"
   dependencies:
     "@babel/core": ^7.18.6
     "@babel/types": ^7.18.7
-    "@metamask/snaps-types": ^0.26.0
+    "@metamask/snaps-types": ^0.26.1
     "@metamask/utils": ^3.3.1
     "@noble/hashes": ^1.1.3
     "@scure/base": ^1.1.1
@@ -540,7 +540,7 @@ __metadata:
     ses: ^0.17.0
     superstruct: ^0.16.7
     validate-npm-package-name: ^5.0.0
-  checksum: a0de5ff94b46a6cfcc73c6084d47324b1d4286edc31756b63d7eae38899863212cc233c6b1289924d02bad37f85715c60352b393c8f9291508e0da88f5b566eb
+  checksum: 9e34acb85c6f04a9db2ff18d4ce17a536ad14984b02e1e2a31c21491bec2b807a3ff2e1f51a178c2e3b40821ce5a41364921fa64163c2dfdfcb216b8b40ecd2f
   languageName: node
   linkType: hard
 
