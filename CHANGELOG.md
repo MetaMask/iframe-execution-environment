@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.11.1]
+### Fixed
+- Fix usage of wrong `ethereum` global for `ethereum` endowment ([#118](https://github.com/MetaMask/iframe-execution-environment/pull/118))
+  - Accomplished by bumping `@metamask/snaps-execution-environments` to `0.26.2`
+
 ## [0.11.0]
 ### Added
 - Add transaction insight caveat for accessing transaction origin ([#103](https://github.com/MetaMask/iframe-execution-environment/pull/103))
@@ -196,7 +201,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial implementation of an iframe execution environment for MetaMask Snaps, using `WindowPostMessageStream` for transport.
 
-[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.11.0...HEAD
+[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.11.1...HEAD
+[0.11.1]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.11.0...v0.11.1
 [0.11.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.10.0...v0.11.0
 [0.10.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.9.1...v0.10.0
 [0.9.1]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.9.0...v0.9.1
