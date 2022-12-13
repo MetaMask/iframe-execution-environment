@@ -6,6 +6,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.11.1]
+### Uncategorized
+- `@metamask/snaps-execution-environments@0.26.2` ([#118](https://github.com/MetaMask/iframe-execution-environment/pull/118))
+- Bump @metamask/eslint-config from 11.0.1 to 11.0.2 ([#117](https://github.com/MetaMask/iframe-execution-environment/pull/117))
+- Bump @metamask/snaps-execution-environments from 0.26.0 to 0.26.1 ([#116](https://github.com/MetaMask/iframe-execution-environment/pull/116))
+- Bump ESLint configs and related dependencies ([#115](https://github.com/MetaMask/iframe-execution-environment/pull/115))
+- Bump qs from 6.5.2 to 6.5.3 ([#114](https://github.com/MetaMask/iframe-execution-environment/pull/114))
+- Bump @metamask/snaps-execution-environments from 0.25.0 to 0.26.0 ([#113](https://github.com/MetaMask/iframe-execution-environment/pull/113))
+- Bump @metamask/auto-changelog from 2.6.1 to 3.1.0 ([#109](https://github.com/MetaMask/iframe-execution-environment/pull/109))
+- Bump @metamask/snaps-execution-environments from 0.24.0 to 0.25.0 ([#112](https://github.com/MetaMask/iframe-execution-environment/pull/112))
+- Bump @metamask/utils from 2.0.0 to 2.1.0 ([#110](https://github.com/MetaMask/iframe-execution-environment/pull/110))
+- Bump @metamask/providers from 10.2.0 to 10.2.1 ([#106](https://github.com/MetaMask/iframe-execution-environment/pull/106))
+- Revert "Delete dependabot.yml (#100)" ([#100](https://github.com/MetaMask/iframe-execution-environment/pull/100))
+
 ## [0.11.0]
 ### Added
 - Add transaction insight caveat for accessing transaction origin ([#103](https://github.com/MetaMask/iframe-execution-environment/pull/103))
@@ -196,7 +210,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial implementation of an iframe execution environment for MetaMask Snaps, using `WindowPostMessageStream` for transport.
 
-[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.11.0...HEAD
+[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.11.1...HEAD
+[0.11.1]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.11.0...v0.11.1
 [0.11.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.10.0...v0.11.0
 [0.10.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.9.1...v0.10.0
 [0.9.1]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.9.0...v0.9.1
