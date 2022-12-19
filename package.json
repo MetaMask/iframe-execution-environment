@@ -19,7 +19,7 @@
     "test": "echo 'No tests specified' && exit 0"
   },
   "dependencies": {
-    "@metamask/snaps-execution-environments": "^0.26.2",
+    "@metamask/snaps-execution-environments": "^0.27.1",
     "ses": "^0.18.0"
   },
   "devDependencies": {
