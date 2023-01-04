@@ -32,7 +32,10 @@ async function main() {
 
   // public/lockdown.umd.min.js
   await copyFile(
-    path.join(NODE_MODULES, `ses/dist/${LOCKDOWN_FILE_NAME}`),
+    path.join(
+      NODE_MODULES,
+      `@metamask/snaps-execution-environments/dist/webpack/iframe/${LOCKDOWN_FILE_NAME}`,
+    ),
     path.join(PUBLIC, LOCKDOWN_FILE_NAME),
   );
 
