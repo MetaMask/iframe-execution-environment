@@ -439,7 +439,6 @@ __metadata:
     prettier-plugin-packagejson: ^2.2.17
     rimraf: ^3.0.2
     serve-handler: ^6.1.3
-    ses: ^0.18.0
   languageName: unknown
   linkType: soft
 
@@ -3281,13 +3280,6 @@ __metadata:
   version: 0.17.0
   resolution: "ses@npm:0.17.0"
   checksum: c4c668de819b5366da7a9797d4ab0ec9c3efe4904ea64453cad5a48b659c77b817d589584019f5f7ca42802f640dcc706241543c1df00282473320a77397b641
-  languageName: node
-  linkType: hard
-
-"ses@npm:^0.18.0":
-  version: 0.18.0
-  resolution: "ses@npm:0.18.0"
-  checksum: d5e8fc9ee98077d578753694fd98879baf86d753165251d688df9f7bb690c129a0b8c776bcf839beebb74b2dfbc29d6f7ef26ec7d58dc8f3176775780a883af6
   languageName: node
   linkType: hard
 
