@@ -6,6 +6,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.12.0]
+### Uncategorized
+- `snaps-execution-environments@0.28.0` ([#129](https://github.com/MetaMask/iframe-execution-environment/pull/129))
+- Update CODEOWNERS ([#128](https://github.com/MetaMask/iframe-execution-environment/pull/128))
+- Bump luxon from 3.1.0 to 3.2.1 ([#127](https://github.com/MetaMask/iframe-execution-environment/pull/127))
+- Bump json5 from 1.0.1 to 1.0.2 ([#126](https://github.com/MetaMask/iframe-execution-environment/pull/126))
+- Use SES from `@metamask/snaps-execution-environments` ([#125](https://github.com/MetaMask/iframe-execution-environment/pull/125))
+- Bump @metamask/post-message-stream from 6.0.0 to 6.1.0 ([#124](https://github.com/MetaMask/iframe-execution-environment/pull/124))
+- Bump @metamask/snaps-execution-environments from 0.26.2 to 0.27.1 ([#123](https://github.com/MetaMask/iframe-execution-environment/pull/123))
+- Bump @metamask/eslint-config-nodejs from 11.0.1 to 11.1.0 ([#121](https://github.com/MetaMask/iframe-execution-environment/pull/121))
+- Bump @metamask/eslint-config from 11.0.2 to 11.1.0 ([#120](https://github.com/MetaMask/iframe-execution-environment/pull/120))
+- Bump @metamask/eslint-config-jest from 11.0.0 to 11.1.0 ([#122](https://github.com/MetaMask/iframe-execution-environment/pull/122))
+
 ## [0.11.1]
 ### Fixed
 - Fix usage of wrong `ethereum` global for `ethereum` endowment ([#118](https://github.com/MetaMask/iframe-execution-environment/pull/118))
@@ -201,7 +214,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial implementation of an iframe execution environment for MetaMask Snaps, using `WindowPostMessageStream` for transport.
 
-[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.11.1...HEAD
+[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.12.0...HEAD
+[0.12.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.11.1...v0.12.0
 [0.11.1]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.11.0...v0.11.1
 [0.11.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.10.0...v0.11.0
 [0.10.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.9.1...v0.10.0
