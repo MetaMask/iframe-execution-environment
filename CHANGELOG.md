@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.13.0]
-### Changed 
+### Changed
 - Harden and constrain all endowments ([#134](https://github.com/MetaMask/iframe-execution-environment/pull/134), [#137](https://github.com/MetaMask/iframe-execution-environment/pull/137))
   - Accomplished by bumping `@metamask/snaps-execution-environments` to `0.30.0`
 
