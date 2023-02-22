@@ -19,7 +19,7 @@
     "test": "echo 'No tests specified' && exit 0"
   },
   "dependencies": {
-    "@metamask/snaps-execution-environments": "^0.29.0"
+    "@metamask/snaps-execution-environments": "^0.30.0"
   },
   "devDependencies": {
     "@lavamoat/allow-scripts": "^2.0.3",
