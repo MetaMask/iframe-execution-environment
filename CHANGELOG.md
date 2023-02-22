@@ -6,6 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.13.0]
+### Changed
+- Harden and constrain all endowments ([#134](https://github.com/MetaMask/iframe-execution-environment/pull/134), [#137](https://github.com/MetaMask/iframe-execution-environment/pull/137))
+  - Accomplished by bumping `@metamask/snaps-execution-environments` to `0.30.0`
+
+### Removed
+- Removed `WebAssembly` by default ([#137](https://github.com/MetaMask/iframe-execution-environment/pull/137))
+  - Accomplished by bumping `@metamask/snaps-execution-environments` to `0.30.0`
+  - Snaps must now request `endowment:webassembly` to get access to `WebAssembly`
+
 ## [0.12.0]
 ### Removed
 - Removed `WebSocket` endowment ([#129](https://github.com/MetaMask/iframe-execution-environment/pull/129))
@@ -206,7 +216,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial implementation of an iframe execution environment for MetaMask Snaps, using `WindowPostMessageStream` for transport.
 
-[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.12.0...HEAD
+[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.13.0...HEAD
+[0.13.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.12.0...v0.13.0
 [0.12.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.11.1...v0.12.0
 [0.11.1]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.11.0...v0.11.1
 [0.11.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.10.0...v0.11.0
