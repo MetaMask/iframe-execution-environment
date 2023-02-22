@@ -7,12 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.13.0]
-### Uncategorized
-- `snaps-execution-environments@0.30.0` ([#137](https://github.com/MetaMask/iframe-execution-environment/pull/137))
-- Bump @metamask/utils from 3.5.0 to 3.6.0 ([#136](https://github.com/MetaMask/iframe-execution-environment/pull/136))
-- Bump @metamask/utils from 3.4.1 to 3.5.0 ([#135](https://github.com/MetaMask/iframe-execution-environment/pull/135))
-- Bump @metamask/snaps-execution-environments from 0.28.0 to 0.29.0 ([#134](https://github.com/MetaMask/iframe-execution-environment/pull/134))
-- Bump @metamask/snaps-registry from 1.0.0 to 1.1.0 ([#133](https://github.com/MetaMask/iframe-execution-environment/pull/133))
+### Changed 
+- Harden and constrain all endowments ([#134](https://github.com/MetaMask/iframe-execution-environment/pull/134), [#137](https://github.com/MetaMask/iframe-execution-environment/pull/137))
+  - Accomplished by bumping `@metamask/snaps-execution-environments` to `0.30.0`
+
+### Removed
+- Removed `WebAssembly` by default ([#137](https://github.com/MetaMask/iframe-execution-environment/pull/137))
+  - Accomplished by bumping `@metamask/snaps-execution-environments` to `0.30.0`
+  - Snaps must now request `endowment:webassembly` to get access to `WebAssembly`
 
 ## [0.12.0]
 ### Removed
