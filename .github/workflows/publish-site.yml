@@ -8,7 +8,7 @@ on:
         type: string
 
 jobs:
-  publish-docs-to-gh-pages:
+  publish-site-to-gh-pages:
     name: Publish site to GitHub Pages
     runs-on: ubuntu-latest
     permissions:
