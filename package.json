@@ -13,7 +13,7 @@
     "lint": "yarn lint:eslint && yarn lint:misc --check",
     "lint:eslint": "eslint . --cache --ext js,ts",
     "lint:fix": "yarn lint:eslint --fix && yarn lint:misc --write",
-    "lint:misc": "prettier '**/*.json' '**/*.md' '!CHANGELOG.md' '**/*.yml' '**/*.html' --ignore-path .gitignore",
+    "lint:misc": "prettier '**/*.json' '**/*.md' '!CHANGELOG.md' '**/*.yml' '**/*.html' --ignore-path .gitignore --no-error-on-unmatched-pattern",
     "prepublishOnly": "yarn build && yarn lint && yarn test",
     "start": "node scripts/start.js"
   },
