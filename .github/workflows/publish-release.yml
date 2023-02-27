@@ -22,7 +22,7 @@ jobs:
 
   get-release-version:
     runs-on: ubuntu-latest
-    needs: publish-npm
+    needs: publish-release
     outputs:
       RELEASE_VERSION: ${{ steps.get-release-version.outputs.RELEASE_VERSION }}
     steps:
