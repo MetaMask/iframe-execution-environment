@@ -15,8 +15,7 @@
     "lint:fix": "yarn lint:eslint --fix && yarn lint:misc --write",
     "lint:misc": "prettier '**/*.json' '**/*.md' '!CHANGELOG.md' '**/*.yml' '**/*.html' --ignore-path .gitignore",
     "prepublishOnly": "yarn build && yarn lint && yarn test",
-    "start": "node scripts/start.js",
-    "test": "echo 'No tests specified' && exit 0"
+    "start": "node scripts/start.js"
   },
   "dependencies": {
     "@metamask/snaps-execution-environments": "^0.30.0"
