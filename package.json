@@ -21,7 +21,7 @@
     "ansi-regex@^2.0.0": "^5.0.0"
   },
   "dependencies": {
-    "@metamask/snaps-execution-environments": "^0.30.0"
+    "@metamask/snaps-execution-environments": "^0.31.0"
   },
   "devDependencies": {
     "@lavamoat/allow-scripts": "^2.0.3",
