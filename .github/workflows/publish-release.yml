@@ -2,6 +2,9 @@ name: Publish Release
 
 on:
   workflow_call:
+    secrets:
+      METAMASKBOT_TOKEN:
+        required: true
 
 jobs:
   publish-release:
@@ -41,3 +44,5 @@ jobs:
     uses: ./.github/workflows/publish-site.yml
     with:
       destination_dir: ${{ needs.get-release-version.outputs.RELEASE_VERSION }}
+    secrets:
+      METAMASKBOT_TOKEN: ${{ secrets.METAMASKBOT_TOKEN }}
