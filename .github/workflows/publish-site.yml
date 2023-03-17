@@ -32,6 +32,6 @@ jobs:
       - name: Deploy to `${{ inputs.destination_dir }}` directory of `gh-pages` branch
         uses: peaceiris/actions-gh-pages@de7ea6f8efb354206b205ef54722213d99067935
         with:
-          github_token: ${{ secrets.METAMASKBOT_TOKEN }}
+          personal_token: ${{ secrets.METAMASKBOT_TOKEN }}
           publish_dir: ./public
           destination_dir: ${{ inputs.destination_dir }}
