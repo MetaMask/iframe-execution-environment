@@ -6,11 +6,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.14.0]
-### Changed
-- Disallow requesting `eth_requestAccounts` and `wallet_requestSnaps` RPC methods ([#147](https://github.com/MetaMask/iframe-execution-environment/pull/147))
-  - Accomplished by bumping `@metamask/snaps-execution-environments` to `0.31.0`
-
 ## [0.13.0]
 ### Changed
 - Harden and constrain all endowments ([#134](https://github.com/MetaMask/iframe-execution-environment/pull/134), [#137](https://github.com/MetaMask/iframe-execution-environment/pull/137))
@@ -221,8 +216,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial implementation of an iframe execution environment for MetaMask Snaps, using `WindowPostMessageStream` for transport.
 
-[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.14.0...HEAD
-[0.14.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.13.0...v0.14.0
+[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.13.0...HEAD
 [0.13.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.12.0...v0.13.0
 [0.12.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.11.1...v0.12.0
 [0.11.1]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.11.0...v0.11.1
