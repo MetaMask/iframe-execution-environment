@@ -7,20 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.14.0]
-### Uncategorized
-- Forward MetaMask bot token ([#155](https://github.com/MetaMask/iframe-execution-environment/pull/155))
-- Revert "0.14.0 (#153)" ([#153](https://github.com/MetaMask/iframe-execution-environment/pull/153))
-- 0.14.0 ([#153](https://github.com/MetaMask/iframe-execution-environment/pull/153))
-- Update deploy workflow to use 'personal_token' instead of 'github_token' ([#151](https://github.com/MetaMask/iframe-execution-environment/pull/151))
-- Revert "0.14.0 (#150)" ([#150](https://github.com/MetaMask/iframe-execution-environment/pull/150))
-- 0.14.0 ([#150](https://github.com/MetaMask/iframe-execution-environment/pull/150))
-- `snaps-execution-environment@0.31.0` ([#147](https://github.com/MetaMask/iframe-execution-environment/pull/147))
-- Bump @metamask/browser-passworder from 4.0.2 to 4.1.0 ([#149](https://github.com/MetaMask/iframe-execution-environment/pull/149))
-- Bump @metamask/snaps-registry from 1.1.0 to 1.1.1 ([#146](https://github.com/MetaMask/iframe-execution-environment/pull/146))
-- Bump @metamask/post-message-stream from 6.1.0 to 6.1.1 ([#145](https://github.com/MetaMask/iframe-execution-environment/pull/145))
-- Update the CI to publish to gh-pages using mmbot ([#142](https://github.com/MetaMask/iframe-execution-environment/pull/142))
-- Fix dependabot warnings ([#141](https://github.com/MetaMask/iframe-execution-environment/pull/141))
-- Update GitHub Actions workflows to match `metamask-module-template` ([#139](https://github.com/MetaMask/iframe-execution-environment/pull/139))
+### Changed
+- Disallow requesting `eth_requestAccounts` and `wallet_requestSnaps` RPC methods ([#147](https://github.com/MetaMask/iframe-execution-environment/pull/147))
+  - Accomplished by bumping `@metamask/snaps-execution-environments` to `0.31.0`
 
 ## [0.13.0]
 ### Changed
