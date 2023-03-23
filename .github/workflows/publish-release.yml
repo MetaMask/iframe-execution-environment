@@ -40,7 +40,7 @@ jobs:
         shell: bash
         run: ./scripts/get.sh ".version" "RELEASE_VERSION"
 
-  publish-release-to-gh-pages:
+  publish-release-remote-storage:
     needs: get-release-version
     name: Publish release version `${{ needs.get-release-version.outputs.RELEASE_VERSION }}`
     permissions:
