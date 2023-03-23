@@ -72,4 +72,6 @@ jobs:
       contents: write
     uses: ./.github/workflows/publish-release.yml
     secrets:
-      METAMASKBOT_TOKEN: ${{ secrets.METAMASKBOT_TOKEN }}
+      AWS_REGION: ${{ secrets.AWS_REGION }}
+      AWS_ROLE_ARN: ${{ secrets.AWS_ROLE_ARN }}
+      AWS_BUCKET_NAME: ${{ secrets.AWS_BUCKET_NAME }}

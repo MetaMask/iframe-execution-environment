@@ -3,7 +3,11 @@ name: Publish Release
 on:
   workflow_call:
     secrets:
-      METAMASKBOT_TOKEN:
+      AWS_REGION:
+        required: true
+      AWS_ROLE_ARN:
+        required: true
+      AWS_BUCKET_NAME:
         required: true
 
 jobs:
@@ -38,11 +42,14 @@ jobs:
 
   publish-release-to-gh-pages:
     needs: get-release-version
-    name: Publish site to `${{ needs.get-release-version.outputs.RELEASE_VERSION }}` directory of `gh-pages` branch
+    name: Publish release version `${{ needs.get-release-version.outputs.RELEASE_VERSION }}`
     permissions:
-      contents: write
+      id-token: write   # This is required for requesting the JWT
+      contents: read    # This is required for actions/checkout
     uses: ./.github/workflows/publish-site.yml
     with:
       destination_dir: ${{ needs.get-release-version.outputs.RELEASE_VERSION }}
     secrets:
-      METAMASKBOT_TOKEN: ${{ secrets.METAMASKBOT_TOKEN }}
+      AWS_REGION: ${{ secrets.AWS_REGION }}
+      AWS_ROLE_ARN: ${{ secrets.AWS_ROLE_ARN }}
+      AWS_BUCKET_NAME: ${{ secrets.AWS_BUCKET_NAME }}
