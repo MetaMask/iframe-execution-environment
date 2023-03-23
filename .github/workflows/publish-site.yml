@@ -20,8 +20,8 @@ jobs:
     runs-on: ubuntu-latest
     environment: github-pages
     permissions:
-      id-token: write   # This is required for requesting the JWT
-      contents: read    # This is required for actions/checkout
+      id-token: write # This is required for requesting the JWT
+      contents: read # This is required for actions/checkout
     steps:
       - name: Ensure `destination_dir` is not empty
         if: ${{ inputs.destination_dir == '' }}

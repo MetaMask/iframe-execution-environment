@@ -44,8 +44,8 @@ jobs:
     needs: get-release-version
     name: Publish release version `${{ needs.get-release-version.outputs.RELEASE_VERSION }}`
     permissions:
-      id-token: write   # This is required for requesting the JWT
-      contents: read    # This is required for actions/checkout
+      id-token: write # This is required for requesting the JWT
+      contents: read # This is required for actions/checkout
     uses: ./.github/workflows/publish-site.yml
     with:
       destination_dir: ${{ needs.get-release-version.outputs.RELEASE_VERSION }}
