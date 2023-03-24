@@ -2,13 +2,6 @@ name: Publish Release
 
 on:
   workflow_call:
-    secrets:
-      AWS_REGION:
-        required: true
-      AWS_ROLE_ARN:
-        required: true
-      AWS_BUCKET_NAME:
-        required: true
 
 jobs:
   publish-release:
@@ -49,7 +42,3 @@ jobs:
     uses: ./.github/workflows/publish-site.yml
     with:
       destination_dir: ${{ needs.get-release-version.outputs.RELEASE_VERSION }}
-    secrets:
-      AWS_REGION: ${{ vars.AWS_REGION }}
-      AWS_ROLE_ARN: ${{ vars.AWS_ROLE_ARN }}
-      AWS_BUCKET_NAME: ${{ vars.AWS_BUCKET_NAME }}

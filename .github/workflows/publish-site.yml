@@ -6,13 +6,6 @@ on:
       destination_dir:
         required: true
         type: string
-    secrets:
-      AWS_REGION:
-        required: true
-      AWS_ROLE_ARN:
-        required: true
-      AWS_BUCKET_NAME:
-        required: true
 
 jobs:
   publish-site:
