@@ -70,9 +70,9 @@ jobs:
     name: Publish release
     permissions:
       contents: write
-      id-token: write # This is required for requesting the JWT
+      id-token: write # Required for requesting the OIDC JWT for cloud access token
     uses: ./.github/workflows/publish-release.yml
     secrets:
-      AWS_REGION: ${{ secrets.AWS_REGION }}
-      AWS_ROLE_ARN: ${{ secrets.AWS_ROLE_ARN }}
-      AWS_BUCKET_NAME: ${{ secrets.AWS_BUCKET_NAME }}
+      AWS_REGION: ${{ vars.AWS_REGION }}
+      AWS_ROLE_ARN: ${{ vars.AWS_ROLE_ARN }}
+      AWS_BUCKET_NAME: ${{ vars.AWS_BUCKET_NAME }}

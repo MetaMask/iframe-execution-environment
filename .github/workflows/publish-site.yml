@@ -20,8 +20,8 @@ jobs:
     runs-on: ubuntu-latest
     environment: github-pages
     permissions:
-      id-token: write # This is required for requesting the JWT
-      contents: read # This is required for actions/checkout
+      id-token: write
+      contents: read
     steps:
       - name: Ensure `destination_dir` is not empty
         if: ${{ inputs.destination_dir == '' }}
@@ -40,9 +40,9 @@ jobs:
       - name: configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
-          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
           role-session-name: ghactionssession
-          aws-region: ${{ secrets.AWS_REGION }}
+          aws-region: ${{ vars.AWS_REGION }}
       - name: Deploy to `${{ inputs.destination_dir }}` directory of remote storage
         run: |
-          aws s3 cp ./public s3://${{ secrets.AWS_BUCKET_NAME }}/${{ inputs.destination_dir }} --recursive --acl private
+          aws s3 cp ./public s3://${{ vars.AWS_BUCKET_NAME }}/${{ inputs.destination_dir }} --recursive --acl private
