@@ -37,7 +37,7 @@ jobs:
         run: yarn --immutable
       - name: Run build script
         run: yarn build
-      - name: configure aws credentials
+      - name: configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
