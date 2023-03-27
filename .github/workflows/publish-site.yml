@@ -31,7 +31,7 @@ jobs:
       - name: Run build script
         run: yarn build
       - name: configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@e1e17a757e536f70e52b5a12b2e8d1d1c60e04ef
         with:
           role-to-assume: ${{ vars.AWS_ROLE_ARN }}
           role-session-name: ghactionssession
