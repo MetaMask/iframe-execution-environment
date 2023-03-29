@@ -21,7 +21,7 @@
     "ansi-regex@^2.0.0": "^5.0.0"
   },
   "dependencies": {
-    "@metamask/snaps-execution-environments": "^0.31.0"
+    "@metamask/snaps-execution-environments": "^0.32.0"
   },
   "devDependencies": {
     "@lavamoat/allow-scripts": "^2.0.3",
@@ -51,7 +51,9 @@
       "@metamask/execution-environments>@metamask/snap-types>@metamask/controllers>ethereumjs-util>ethereum-cryptography>keccak": false,
       "@metamask/execution-environments>@metamask/snap-types>@metamask/controllers>ethereumjs-util>ethereum-cryptography>secp256k1": false,
       "@metamask/snaps-execution-environments>@metamask/snaps-utils>@metamask/permission-controller>@metamask/controller-utils>ethereumjs-util>ethereum-cryptography>keccak": false,
-      "@metamask/snaps-execution-environments>@metamask/snaps-utils>@metamask/permission-controller>@metamask/controller-utils>ethereumjs-util>ethereum-cryptography>secp256k1": false
+      "@metamask/snaps-execution-environments>@metamask/snaps-utils>@metamask/permission-controller>@metamask/controller-utils>ethereumjs-util>ethereum-cryptography>secp256k1": false,
+      "@metamask/snaps-execution-environments>@metamask/snaps-utils>@metamask/base-controller>@metamask/controller-utils>ethereumjs-util>ethereum-cryptography>keccak": false,
+      "@metamask/snaps-execution-environments>@metamask/snaps-utils>@metamask/base-controller>@metamask/controller-utils>ethereumjs-util>ethereum-cryptography>secp256k1": false
     }
   }
 }
