@@ -24,7 +24,7 @@ async function main() {
   await copyFile(
     path.join(
       NODE_MODULES,
-      '@metamask/snaps-execution-environments/dist/webpack/iframe/index.html',
+      '@metamask/snaps-execution-environments/dist/browserify/iframe/index.html',
     ),
     path.join(PUBLIC, HTML_FILE_NAME),
   );
@@ -33,7 +33,7 @@ async function main() {
   await copyFile(
     path.join(
       NODE_MODULES,
-      '@metamask/snaps-execution-environments/dist/webpack/iframe/bundle.js',
+      '@metamask/snaps-execution-environments/dist/browserify/iframe/bundle.js',
     ),
     path.join(PUBLIC, 'bundle.js'),
   );
