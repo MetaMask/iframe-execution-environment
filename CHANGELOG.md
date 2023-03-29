@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.15.0]
+### Changed
+- Build execution environments with Browserify and LavaMoat ([#159](https://github.com/MetaMask/iframe-execution-environment/pull/159))
+  - Accomplished by bumping `@metamask/snaps-execution-environments` to `0.32.0`
+- Harden events ([#159](https://github.com/MetaMask/iframe-execution-environment/pull/159))
+  - Accomplished by bumping `@metamask/snaps-execution-environments` to `0.32.0`
+
+### Fixed
+- Fix unbound endowments ([#159](https://github.com/MetaMask/iframe-execution-environment/pull/159))
+  - Accomplished by bumping `@metamask/snaps-execution-environments` to `0.32.0`
+
 ## [0.14.0]
 ### Changed
 - Disallow requesting `eth_requestAccounts` and `wallet_requestSnaps` RPC methods ([#147](https://github.com/MetaMask/iframe-execution-environment/pull/147))
@@ -221,7 +232,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial implementation of an iframe execution environment for MetaMask Snaps, using `WindowPostMessageStream` for transport.
 
-[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.14.0...HEAD
+[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.15.0...HEAD
+[0.15.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.14.0...v0.15.0
 [0.14.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.13.0...v0.14.0
 [0.13.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.12.0...v0.13.0
 [0.12.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.11.1...v0.12.0
