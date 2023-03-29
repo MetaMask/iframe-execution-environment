@@ -10,7 +10,6 @@ on:
         required: true
         type: string
 
-
 jobs:
   publish-site:
     name: Publish site
