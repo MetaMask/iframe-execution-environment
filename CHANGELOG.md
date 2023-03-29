@@ -7,9 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.15.0]
-### Uncategorized
-- `snaps-execution-environments@0.32.0` ([#159](https://github.com/MetaMask/iframe-execution-environment/pull/159))
-- Bump @metamask/snaps-registry from 1.1.1 to 1.2.0 ([#158](https://github.com/MetaMask/iframe-execution-environment/pull/158))
+### Changed
+- Build execution environments with Browserify and LavaMoat ([#159](https://github.com/MetaMask/iframe-execution-environment/pull/159))
+  - Accomplished by bumping `@metamask/snaps-execution-environments` to `0.32.0`
+- Harden events ([#159](https://github.com/MetaMask/iframe-execution-environment/pull/159))
+  - Accomplished by bumping `@metamask/snaps-execution-environments` to `0.32.0`
+
+### Fixed
+- Fix unbound endowments ([#159](https://github.com/MetaMask/iframe-execution-environment/pull/159))
+  - Accomplished by bumping `@metamask/snaps-execution-environments` to `0.32.0`
 
 ## [0.14.0]
 ### Changed
