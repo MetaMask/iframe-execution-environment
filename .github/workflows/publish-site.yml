@@ -6,12 +6,16 @@ on:
       destination_dir:
         required: true
         type: string
+      publish-environment:
+        required: true
+        type: string
+
 
 jobs:
   publish-site:
     name: Publish site
     runs-on: ubuntu-latest
-    environment: github-pages
+    environment: $({ inputs.publish-environment })
     permissions:
       id-token: write
       contents: read
