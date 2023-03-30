@@ -7,9 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.15.1]
-### Uncategorized
-- `snaps-execution-environments@0.32.1` ([#161](https://github.com/MetaMask/iframe-execution-environment/pull/161))
-- API-226: update action for pushing iframe release to remote storage ([#157](https://github.com/MetaMask/iframe-execution-environment/pull/157))
+### Changed
+- Publish the iframe execution environment to a new endpoint ([#157](https://github.com/MetaMask/iframe-execution-environment/pull/157))
 
 ## [0.15.0]
 ### Changed
