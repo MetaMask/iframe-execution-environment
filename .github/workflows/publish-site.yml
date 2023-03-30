@@ -1,4 +1,4 @@
-name: Publish site to GitHub Pages
+name: Publish site
 
 on:
   workflow_call:
@@ -6,17 +6,15 @@ on:
       destination_dir:
         required: true
         type: string
-    secrets:
-      METAMASKBOT_TOKEN:
-        required: true
 
 jobs:
-  publish-site-to-gh-pages:
-    name: Publish site to GitHub Pages
+  publish-site:
+    name: Publish site
     runs-on: ubuntu-latest
-    environment: github-pages
+    environment: deploy-prod
     permissions:
-      contents: write
+      id-token: write
+      contents: read
     steps:
       - name: Ensure `destination_dir` is not empty
         if: ${{ inputs.destination_dir == '' }}
@@ -32,9 +30,12 @@ jobs:
         run: yarn --immutable
       - name: Run build script
         run: yarn build
-      - name: Deploy to `${{ inputs.destination_dir }}` directory of `gh-pages` branch
-        uses: peaceiris/actions-gh-pages@de7ea6f8efb354206b205ef54722213d99067935
+      - name: configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@e1e17a757e536f70e52b5a12b2e8d1d1c60e04ef
         with:
-          personal_token: ${{ secrets.METAMASKBOT_TOKEN }}
-          publish_dir: ./public
-          destination_dir: ${{ inputs.destination_dir }}
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          role-session-name: ghactionssession
+          aws-region: ${{ vars.AWS_REGION }}
+      - name: Deploy to `${{ inputs.destination_dir }}` directory of remote storage
+        run: |
+          aws s3 cp ./public s3://${{ vars.AWS_BUCKET_NAME }}/${{ inputs.destination_dir }} --recursive --acl private

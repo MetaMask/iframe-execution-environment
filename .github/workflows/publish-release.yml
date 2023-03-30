@@ -2,9 +2,6 @@ name: Publish Release
 
 on:
   workflow_call:
-    secrets:
-      METAMASKBOT_TOKEN:
-        required: true
 
 jobs:
   publish-release:
@@ -36,13 +33,12 @@ jobs:
         shell: bash
         run: ./scripts/get.sh ".version" "RELEASE_VERSION"
 
-  publish-release-to-gh-pages:
+  publish-release-remote-storage:
     needs: get-release-version
-    name: Publish site to `${{ needs.get-release-version.outputs.RELEASE_VERSION }}` directory of `gh-pages` branch
+    name: Publish release version `${{ needs.get-release-version.outputs.RELEASE_VERSION }}`
     permissions:
-      contents: write
+      id-token: write
+      contents: read
     uses: ./.github/workflows/publish-site.yml
     with:
       destination_dir: ${{ needs.get-release-version.outputs.RELEASE_VERSION }}
-    secrets:
-      METAMASKBOT_TOKEN: ${{ secrets.METAMASKBOT_TOKEN }}
