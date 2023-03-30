@@ -42,4 +42,3 @@ jobs:
     uses: ./.github/workflows/publish-site.yml
     with:
       destination_dir: ${{ needs.get-release-version.outputs.RELEASE_VERSION }}
-      publish-environment: deploy-prod # Use prod for now until we split into nightlies, flask and stable

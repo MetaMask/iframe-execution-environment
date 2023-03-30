@@ -6,15 +6,12 @@ on:
       destination_dir:
         required: true
         type: string
-      publish-environment:
-        required: true
-        type: string
 
 jobs:
   publish-site:
     name: Publish site
     runs-on: ubuntu-latest
-    environment: $({ inputs.publish-environment })
+    environment: deploy-prod
     permissions:
       id-token: write
       contents: read
