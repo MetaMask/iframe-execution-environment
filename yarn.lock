@@ -968,12 +968,12 @@ __metadata:
   linkType: hard
 
 "@metamask/snaps-ui@npm:^0.32.1":
-  version: 0.32.1
-  resolution: "@metamask/snaps-ui@npm:0.32.1"
+  version: 0.32.2
+  resolution: "@metamask/snaps-ui@npm:0.32.2"
   dependencies:
     "@metamask/utils": ^5.0.0
     superstruct: ^1.0.3
-  checksum: 5237185652543561945b69ef1154440a7c6aae4545419f9653e3997fe93fe2042a900ac01336f8050e10251740f6f0440780912aaaaa742fc87c0d91a4292e2a
+  checksum: 98e8900efb63a0f1ec4893624290a1bf2d0fa416f99d57f33532865063f4e4b9b3787b77630629c64d7dc041e3508cac81044eca067ed76a07aa380bc5997db2
   languageName: node
   linkType: hard
 
