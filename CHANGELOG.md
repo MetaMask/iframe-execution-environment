@@ -7,10 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.16.0-flask.1]
-### Uncategorized
-- Bump CI action versions ([#169](https://github.com/MetaMask/iframe-execution-environment/pull/169))
-- `snaps-executions-environments@0.33.1-flask.1` ([#168](https://github.com/MetaMask/iframe-execution-environment/pull/168))
-- Bump @metamask/snaps-execution-environments from 0.32.1 to 0.32.2 ([#164](https://github.com/MetaMask/iframe-execution-environment/pull/164))
+### Changed
+- **BREAKING:** Block `wallet_requestPermissions` ([#168](https://github.com/MetaMask/iframe-execution-environment/pull/168))
+  - Accomplished by bumping `@metamask/snaps-execution-environments` to `0.33.1-flask.1`
+- Add console endowment that prepends snap IDs to log output ([#168](https://github.com/MetaMask/iframe-execution-environment/pull/168))
+  - Accomplished by bumping `@metamask/snaps-execution-environments` to `0.33.1-flask.1`
 
 ## [0.15.1]
 ### Changed
