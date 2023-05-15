@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.16.0-flask.1]
+### Uncategorized
+- Bump CI action versions ([#169](https://github.com/MetaMask/iframe-execution-environment/pull/169))
+- `snaps-executions-environments@0.33.1-flask.1` ([#168](https://github.com/MetaMask/iframe-execution-environment/pull/168))
+- Bump @metamask/snaps-execution-environments from 0.32.1 to 0.32.2 ([#164](https://github.com/MetaMask/iframe-execution-environment/pull/164))
+
 ## [0.15.1]
 ### Changed
 - Publish the iframe execution environment to a new endpoint ([#157](https://github.com/MetaMask/iframe-execution-environment/pull/157))
@@ -236,7 +242,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial implementation of an iframe execution environment for MetaMask Snaps, using `WindowPostMessageStream` for transport.
 
-[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.15.1...HEAD
+[Unreleased]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.16.0-flask.1...HEAD
+[0.16.0-flask.1]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.15.1...v0.16.0-flask.1
 [0.15.1]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.15.0...v0.15.1
 [0.15.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.14.0...v0.15.0
 [0.14.0]: https://github.com/MetaMask/iframe-execution-environment/compare/v0.13.0...v0.14.0
