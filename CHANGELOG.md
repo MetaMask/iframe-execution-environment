@@ -7,8 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.16.1-flask.1]
-### Uncategorized
-- Bump @metamask/snaps-execution-environments ([#171](https://github.com/MetaMask/iframe-execution-environment/pull/171))
+### Changed
+- Improve JSON sanitization ([#171](https://github.com/MetaMask/iframe-execution-environment/pull/171))
+  - Accomplished by bumping `@metamask/snaps-execution-environments` to `0.34.0-flask.1`
 
 ## [0.16.0-flask.1]
 ### Changed
